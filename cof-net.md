@@ -11,7 +11,7 @@ The objective of this paper is to recover the original component signals from a 
 
 ## The Architecture of OF and SSLM
 ![](cof-net/figures/of_sslm.pdf?raw=true | width=500)
->The Opponent Filter (OF) module identifies and relocates residual components between sound sources. Sound Source Location Masking (SSLM) network identifies a minimum set of input pixels, for which the COF-Net would produce almost identical output as for the entire image.
+>The Opponent Filter (OF) module identifies and relocates residual components between sound sources based on appearance and motion information. Sound Source Location Masking (SSLM) network identifies a minimum set of input pixels, for which the COF-Net would produce almost identical output as for the entire image.
 
 ## Paper
 <blockquote class="embedly-card"><h4><a href="https://arxiv.org/abs/2006.03028">Visually Guided Sound Source Separation using Cascaded Opponent Filter Network</a></h4><p>The objective of this paper is to recover the original component signals from a mixture audio with the aid of visual cues of the sound sources.</p></blockquote>
