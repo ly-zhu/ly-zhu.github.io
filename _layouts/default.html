@@ -3,13 +3,24 @@
 		<head>
 			<meta charset="UTF-8">
 			<title>{{ page.title }}</title>
-			<!-- link to main stylesheet -->
-   			<link rel="stylesheet" href="/assets/css/style.scss">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+    			<meta name="theme-color" content="#008080">
+    			<link rel="stylesheet" href="{{ '/assets/css/style.scss?v=' | append: site.github.build_revision | relative_url }}">
 		</head>
 		
 		<body>
-			<h1>{{ page.title }}</h1>
-			<h1>{{ page.author }}</h1>
+    			<section class="page-header">
+      				<h1 class="project-name">{{ page.title }}</h1>
+      				<h2 class="project-tagline"><a <span style='color: #000000;' href="https://ly-zhu.github.io/ly-zhu/">{{ page.author1 }}</a> <a <span style='color: #000000;' href="http://esa.rahtu.fi/">{{ page.author2 }}</a></h2>
+      				<h3 class="project-tagline">WACV 2020</h3>
+      				{% if site.github.is_project_page %}
+        				<a href="https://github.com/ly-zhu/cof-net" class="btn">GitHub</a>
+      				{% endif %}
+      				{% if site.show_downloads %}
+        				<a href="https://arxiv.org/abs/2006.03028" class="btn">Arxiv</a>
+      				{% endif %}
+    			</section>
+
 			<section>
 				{{ content }}
    			</section>
