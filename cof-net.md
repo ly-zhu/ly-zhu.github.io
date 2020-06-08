@@ -47,5 +47,5 @@ The Opponent Filter (OF) module identifies and relocates residual components bet
     }
 ```
 
-<img src="images/logo_tau.png" width="288" height="158">
+<img src="images/logo_tau.png" width="288">
 <!-- ![Octocat](images/logo_tau.png?raw=true | width=288) -->
