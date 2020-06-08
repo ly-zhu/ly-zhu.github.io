@@ -4,7 +4,8 @@ layout: default
 ---
 
 [[Paper]](https://arxiv.org/pdf/2006.03028.pdf)
-[[Code **Coming soon.**]](https://github.com/ly-zhu/cof-net)
+[[Code **Coming soon.**]]()
+<!-- [[Code **Coming soon.**]](https://github.com/ly-zhu/cof-net) -->
 
 # Abstract
 The objective of this paper is to recover the original component signals from a mixture audio with the aid of visual cues of the sound sources. Such task is usually referred as visually guided sound source separation. The proposed Cascaded Opponent Filter (COF) framework consists of multiple stages, which recursively refine the sound separation based on appearance and motion information. A key element is a novel opponent filter module that identifies and relocates residual components between sound sources. Finally, we propose a Sound Source Location Masking (SSLM) technique, which, together with COF, produces a pixel level mask of the source location. The entire system is trained end-to-end using a large set of unlabelled videos. We compare COF with recent baselines and obtain state-of-the-art performance in three challenging datasets (MUSIC, A-MUSIC, and A-NATURAL). The implementation and pre-trained models will be made publicly available.
