@@ -1,6 +1,6 @@
 ---
 title: Visually Guided Sound Source Separation using Cascaded Opponent Filter Network
-layout: main
+layout: default
 ---
 
 [[Paper]](https://arxiv.org/pdf/2006.03028.pdf)
