@@ -16,29 +16,38 @@ The objective of this paper is to recover the original component signals from a 
 
 The overall architecture of the proposed Cascaded Opponent Filter (COF) network. COF operates in multiple stages. The first stage contains three components: 1) a sound network that splits the input spectrogram into a set of feature maps; 2) a vision network that converts the input video sequences into compact representations; and 3) a sound separator that produces spectrograms of the component audios (one per video) based on the outputs of the sound and vision networks. The second stage contains similar sound and vision networks as the first one (internal details may differ). However, instead of the sound separator, the second stage contains a special opponent filter (OF) module, which enhances the separation result by transferring sound components between the sources. The output of the filter is passed to the next stage or used as the final output. The following stages are identical to the second one and, for this reason, we refer our method as cascaded opponent filter (COF) network. The final component audios are produced by applying the inverse STFT to the component spectrograms.
 
-## The Architecture of OF
+
+## Vision Network
+<!-- ![](cof-net/figures/cof.png?raw=true | width=500) -->
+<img src="cof-net/figures/vision.png" width="800"/>
+
+The vision network aims at converting the input video sequence (or keyframe) into a compact representation that contains the necessary information of the sound source. Sometimes already a pure appearance of the source (e.g. instru- ment type) might be sufficient, but, in most cases, the motions are vital cues to facilitate the source separation (e.g. hand motion, mouth motion, etc.). The appropriate representation may have high model/computation complexity and, to seek for a balance between computational complexity and performance, we study several visual representation options. 
+
+
+## Opponent Filter (OF)
 <!-- ![](cof-net/figures/of_sslm.png?raw=true | width=500) -->
-<img src="cof-net/figures/of_SS.png" width="800"/>
+<img src="cof-net/figures/of.png" width="800"/>
 
-The Opponent Filter (OF) module identifies and relocates residual components between sound sources based on appearance and motion information of all videos. 
+<!-- The Opponent Filter (OF) module identifies and relocates residual components between sound sources based on appearance and motion information of all videos.  -->
+
+The main idea in the Opponent Filter (OF) module is to use visual representation of the source n to identify spectrum components from the source m that should belong to source n but are currently assigned to m. These are then transferred from source m to n. The motivation behind the construction is to utilise all visual representations z1,...,zn$ to determine each component audio, instead of using only the corresponding one.
 
 
-
-## The Architecture of SSLM
+## Sound Source Location Masking (SSLM)
 <!-- ![](cof-net/figures/of_sslm.png?raw=true | width=500) -->
-<img src="cof-net/figures/sslm.png" width="800"/>
+<img src="cof-net/figures/sslm.png" width="500"/>
 
 Sound Source Location Masking (SSLM) network identifies a minimum set of input pixels, for which the COF-Net would produce almost identical output as for the entire image.
 
 
 ## Examples of Sound Source Separation
 <!-- ![](cof-net/figures/of_sslm.png?raw=true | width=500) -->
-<img src="cof-net/figures/sep_all_vis.png" width="800"/>
+<img src="cof-net/figures/sep.png" width="800"/>
 
 
 ## Examples of Sound Source Localization
 <!-- ![](cof-net/figures/of_sslm.png?raw=true | width=500) -->
-<img src="cof-net/figures/loc_MUSIC_vis.png" width="800"/>
+<img src="cof-net/figures/loc.png" width="800"/>
 
 
 <!--
