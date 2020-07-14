@@ -12,13 +12,13 @@ The objective of this paper is to recover the original component signals from a 
 
 ## The Architecture of COF-Net
 <!-- ![](cof-net/figures/cof.png?raw=true | width=500) -->
-<img src="cof-net/figures/cof.png" width="500"/>
+<img src="cof-net/figures/cof.png" width="800"/>
 
 The overall architecture of the proposed Cascaded Opponent Filter (COF) network. COF operates in multiple stages. The first stage contains three components: 1) a sound network that splits the input spectrogram into a set of feature maps; 2) a vision network that converts the input video sequences into compact representations; and 3) a sound separator that produces spectrograms of the component audios (one per video) based on the outputs of the sound and vision networks. The second stage contains similar sound and vision networks as the first one (internal details may differ). However, instead of the sound separator, the second stage contains a special opponent filter (OF) module, which enhances the separation result by transferring sound components between the sources. The output of the filter is passed to the next stage or used as the final output. The following stages are identical to the second one and, for this reason, we refer our method as cascaded opponent filter (COF) network. The final component audios are produced by applying the inverse STFT to the component spectrograms.
 
 ## The Architecture of OF
 <!-- ![](cof-net/figures/of_sslm.png?raw=true | width=500) -->
-<img src="cof-net/figures/of_SS.png" width="500"/>
+<img src="cof-net/figures/of_SS.png" width="800"/>
 
 The Opponent Filter (OF) module identifies and relocates residual components between sound sources based on appearance and motion information of all videos. 
 
@@ -26,19 +26,19 @@ The Opponent Filter (OF) module identifies and relocates residual components bet
 
 ## The Architecture of SSLM
 <!-- ![](cof-net/figures/of_sslm.png?raw=true | width=500) -->
-<img src="cof-net/figures/sslm.png" width="500"/>
+<img src="cof-net/figures/sslm.png" width="800"/>
 
 Sound Source Location Masking (SSLM) network identifies a minimum set of input pixels, for which the COF-Net would produce almost identical output as for the entire image.
 
 
 ## Examples of Sound Source Separation
 <!-- ![](cof-net/figures/of_sslm.png?raw=true | width=500) -->
-<img src="cof-net/figures/sep_all_vis.png" width="500"/>
+<img src="cof-net/figures/sep_all_vis.png" width="800"/>
 
 
 ## Examples of Sound Source Localization
 <!-- ![](cof-net/figures/of_sslm.png?raw=true | width=500) -->
-<img src="cof-net/figures/loc_MUSIC_vis.png" width="500"/>
+<img src="cof-net/figures/loc_MUSIC_vis.png" width="800"/>
 
 
 <!--
