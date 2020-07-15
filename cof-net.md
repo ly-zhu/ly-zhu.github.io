@@ -30,14 +30,14 @@ The vision network aims at converting the input video sequence (or keyframe) int
 
 <!-- The Opponent Filter (OF) module identifies and relocates residual components between sound sources based on appearance and motion information of all videos.  -->
 
-The main idea in the Opponent Filter (OF) module is to use visual representation of the source n to identify spectrum components from the source m that should belong to source n but are currently assigned to m. These are then transferred from source m to n. The motivation behind the construction is to utilise all visual representations z1,...,zn$ to determine each component audio, instead of using only the corresponding one.
+The main idea in the Opponent Filter (OF) module is to use visual representation of the source n to identify spectrum components from the source m that should belong to source n but are currently assigned to m. These are then transferred from source m to n. The motivation behind the construction is to utilise all visual representations z1,...,zn to determine each component audio, instead of using only the corresponding one.
 
 
-## Sound Source Location Masking (SSLM)
+## Sound Source Location Masking Network (SSLM)
 <!-- ![](cof-net/figures/of_sslm.png?raw=true | width=500) -->
 <img src="cof-net/figures/sslm.png" width="500"/>
 
-Sound Source Location Masking (SSLM) network identifies a minimum set of input pixels, for which the COF-Net would produce almost identical output as for the entire image.
+Sound Source Location Masking (SSLM) network identifies a minimum set of input pixels, for which the COF-Net would produce almost identical output as for the entire image. The SSLM is trained together with the overall model. The input video frames are first passed through the SSLM component which outputs a weighted location mask [0,1] having same spatial size as the input frame. The input video frames are multiplied element-wise with the mask, and the result is passed to the COF model.
 
 
 ## Examples of Sound Source Separation
