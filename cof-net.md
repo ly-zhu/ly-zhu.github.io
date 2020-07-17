@@ -4,7 +4,7 @@ layout: default
 ---
 
 [[Paper]](https://arxiv.org/pdf/2006.03028.pdf)
-[[Code **Coming soon.**]]()
+<!-- [[Code **Coming soon.**]]() -->
 <!-- [[Code **Coming soon.**]](https://github.com/ly-zhu/cof-net) -->
 
 # Abstract
