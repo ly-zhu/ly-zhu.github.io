@@ -26,3 +26,9 @@
   Project webpage: https://ly-zhu.github.io/portrait
 
   Paper: https://ieeexplore.ieee.org/abstract/document/8785021
+
+* Predicting Gene Expression Levels from Histone Modification Signals with Convolutional Recurrent Neural Networks
+
+  Project webpage: https://ly-zhu.github.io/crnn
+
+  Paper: https://link.springer.com/chapter/10.1007/978-981-10-5122-7_139
