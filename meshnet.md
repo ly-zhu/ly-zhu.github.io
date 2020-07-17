@@ -1,6 +1,6 @@
 ---
 title: Cross-Granularity Attention Network for Semantic Segmentation
-layout: default
+layout: default0
 ---
 
 [[Paper]](https://openaccess.thecvf.com/content_ICCVW_2019/papers/NeurArch/Zhu_Cross-Granularity_Attention_Network_for_Semantic_Segmentation_ICCVW_2019_paper.pdf)

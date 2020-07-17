@@ -1,6 +1,6 @@
 ---
 title: Portrait Instance Segmentation for Mobile Devices
-layout: default
+layout: default0
 ---
 
 [[Paper]](https://ieeexplore.ieee.org/abstract/document/8785021)
