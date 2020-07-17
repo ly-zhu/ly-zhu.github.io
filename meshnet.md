@@ -60,12 +60,12 @@ Intermediate contour predictions before (top row) and after (bottom row) CGCE. C
 
 ## Citation
 ```bibtex 
-@InProceedings{Zhu_2019_ICCV,
-author = {Zhu, Lingyu and Wang, Tinghuai and Aksu, Emre and Kamarainen, Joni-Kristian},
-title = {Cross-Granularity Attention Network for Semantic Segmentation},
-booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV) Workshops},
-month = {Oct},
-year = {2019}
+@inproceedings{zhu2019cross,
+  title={Cross-Granularity Attention Network for Semantic Segmentation},
+  author={Zhu, Lingyu and Wang, Tinghuai and Aksu, Emre and Kamarainen, Joni-Kristian},
+  booktitle={Proceedings of the IEEE International Conference on Computer Vision Workshops},
+  pages={0--0},
+  year={2019}
 }
 ```
 
