@@ -56,14 +56,14 @@ We take the framework of A(Res-50) + S(DV3P) as an example to visualize the lear
 
 ## Citation
 ```bibtex   
-    @misc{zhu2020Separating,
-        title={Separating Sounds from a Single Image},
-        author={Lingyu Zhu and Esa Rahtu},
-        year={2020},
-        eprint={2007.07984},
-        archivePrefix={arXiv},
-        primaryClass={cs.CV}
-    }
+    @misc{zhu2020separating,
+    title={Separating Sounds from a Single Image},
+    author={Lingyu Zhu and Esa Rahtu},
+    year={2020},
+    eprint={2007.07984},
+    archivePrefix={arXiv},
+    primaryClass={cs.CV}
+}
 ```
 
 <img src="images/logo_tau.png" width="288">
