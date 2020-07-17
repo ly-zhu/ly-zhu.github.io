@@ -1,5 +1,12 @@
 # projects page
 
+* Separating Sounds from a Single Image
+
+  Project webpage: https://ly-zhu.github.io/separating-sounds-from-single-image
+
+  Paper: https://arxiv.org/pdf/2007.07984.pdf
+
+
 * Visually Guided Sound Source Separation using Cascaded Opponent Filter Network
 
   Project webpage: https://ly-zhu.github.io/cof-net
@@ -7,9 +14,15 @@
   Paper: https://arxiv.org/pdf/2006.03028.pdf
   
 
+* Cross-Granularity Attention Network for Semantic Segmentation
 
-* Separating Sounds from a Single Image
+  Project webpage: https://ly-zhu.github.io/meshnet
 
-  Project webpage: https://ly-zhu.github.io/separating-sounds-from-single-image
+  Paper: https://openaccess.thecvf.com/content_ICCVW_2019/papers/NeurArch/Zhu_Cross-Granularity_Attention_Network_for_Semantic_Segmentation_ICCVW_2019_paper.pdf
 
-  Paper: https://arxiv.org/pdf/2007.07984.pdf
+
+* Portrait Instance Segmentation for Mobile Devices
+
+  Project webpage: https://ly-zhu.github.io/portrait
+
+  Paper: https://ieeexplore.ieee.org/abstract/document/8785021
