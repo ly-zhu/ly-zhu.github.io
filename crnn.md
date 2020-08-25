@@ -3,8 +3,7 @@ title: Predicting Gene Expression Levels from Histone Modification Signals with 
 layout: default1
 ---
 
-[[Paper]](https://link.springer.com/chapter/10.1007/978-981-10-5122-7_139)
-<!-- [[Code **Coming soon.**]]() -->
+[[Paper]](https://link.springer.com/chapter/10.1007/978-981-10-5122-7_139) | [[Code]](https://github.com/ly-zhu/CRNN-gene-expression-with-histone-modifications)
 <!-- [[Code **Coming soon.**]](https://github.com/ly-zhu/cof-net) -->
 
 # Abstract
