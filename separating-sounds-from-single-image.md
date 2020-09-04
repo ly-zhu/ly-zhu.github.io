@@ -3,8 +3,7 @@ title: Separating Sounds from a Single Image
 layout: default
 ---
 
-[[Paper]](https://arxiv.org/pdf/2007.07984.pdf)
-<!-- [[Code **Coming soon.**]](https://github.com/ly-zhu/cof-net) -->
+[Paper](https://arxiv.org/pdf/2007.07984.pdf) | [Code](https://github.com/ly-zhu/Separating-Sounds-from-a-Single-Image)
 
 # Abstract
 Recently, visual information has been widely used to aid the sound source separation tasks. It aims at identifying sound components from a given sound mixture with the presence of visual information. Especially, the appearance cues play an important role on separating sounds. However, the capacity of how well the network processes each modality is often ignored. In this paper, we investigate the performance of appearance information, extracted from a single image, in the task of recovering the original component signals from a mixture audio. An efficient appearance attention module is introduced to improve the sound separation performance by enhancing the distinction of the predicted semantic representations, and to precisely locate sound sources without extra computation. Moreover, we utilize the ground category information to study the capacity of each sub-network. We compare the proposed methods with recent baselines on the MUSIC dataset. 
