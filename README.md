@@ -1,9 +1,9 @@
 # Personal webpage   https://ly-zhu.github.io
 # projects page
 
-* Separating Sounds from a Single Image
+* Leveraging Category Information for Single-Frame Visual Sound Source Separation
 
-  Project webpage: https://ly-zhu.github.io/separating-sounds-from-single-image
+  Project webpage: https://ly-zhu.github.io/leveraging-category-information-for-single-frame-visual-sound-source-separation
 
   Paper: https://arxiv.org/pdf/2007.07984.pdf
 
