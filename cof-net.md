@@ -3,7 +3,7 @@ title: Visually Guided Sound Source Separation using Cascaded Opponent Filter Ne
 layout: default
 ---
 
-[Paper](https://arxiv.org/pdf/2006.03028.pdf) | [Code **Coming soon.**]() | [ACCV2020(**Oral**)](http://accv2020.kyoto)
+[Paper](https://openaccess.thecvf.com/content/ACCV2020/papers/Zhu_Visually_Guided_Sound_Source_Separation_using_Cascaded_Opponent_Filter_Network_ACCV_2020_paper.pdf) | [ACCV2020(**Oral**)](http://accv2020.kyoto)
 <!-- [[Code **Coming soon.**]](https://github.com/ly-zhu/cof-net) -->
 
 # Abstract
@@ -64,13 +64,11 @@ Sound Source Location Masking (SSLM) network identifies a minimum set of input p
 
 ## Citation
 ```bibtex   
-    @misc{zhu2020visually,
-        title={Visually Guided Sound Source Separation using Cascaded Opponent Filter Network},
-        author={Lingyu Zhu and Esa Rahtu},
-        year={2020},
-        eprint={2006.03028},
-        archivePrefix={arXiv},
-        primaryClass={cs.CV}
+    @inproceedings{zhu2020visually,
+  	title={Visually guided sound source separation using cascaded opponent filter network},
+  	author={Zhu, Lingyu and Rahtu, Esa},
+  	booktitle={Proceedings of the Asian Conference on Computer Vision},
+  	year={2020}
     }
 ```
 
