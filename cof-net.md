@@ -64,12 +64,13 @@ Sound Source Location Masking (SSLM) network identifies a minimum set of input p
 
 ## Citation
 ```bibtex   
-    @inproceedings{zhu2020visually,
-  	title={Visually guided sound source separation using cascaded opponent filter network},
-  	author={Zhu, Lingyu and Rahtu, Esa},
-  	booktitle={Proceedings of the Asian Conference on Computer Vision},
-  	year={2020}
-    }
+	InProceedings{Zhu_2020_ACCV,
+	    author    = {Zhu, Lingyu and Rahtu, Esa},
+	    title     = {Visually Guided Sound Source Separation using Cascaded Opponent Filter Network},
+	    booktitle = {Proceedings of the Asian Conference on Computer Vision (ACCV)},
+	    month     = {November},
+	    year      = {2020}
+	}
 ```
 
 <img src="images/logo_tau.png" width="288">
