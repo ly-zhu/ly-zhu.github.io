@@ -5,20 +5,31 @@ layout: default
 
 [Paper](https://arxiv.org/pdf/2007.07984.pdf) | [Code](https://github.com/ly-zhu/Leveraging-Category-Information-for-Single-Frame-Visual-Sound-Source-Separation)
 
+
 # Abstract
 Visual sound source separation aims at identifying sound components from a given sound mixture with the presence of visual cues. Prior works have demonstrated impressive results, but with the expense of large multi-stage architectures and complex data representations (e.g. optical flow trajectories). In contrast, we study simple yet efficient models for visual sound separation using only a single video frame. Furthermore, our models are able to exploit the information of the sound source category in the separation process. To this end, we propose two models where we assume that i) the category labels are available at the training time, or ii) we know if the training sample pairs are from the same or different category. The experiments with the MUSIC dataset show that our model obtains comparable or better performance compared to several recent baseline methods. 
 
 
-## Architecture of the Sound Source Separation and Localization with Appearance Attentin Module
+## The framework of single frame visual sound source separation and localization system
 <!-- ![](cof-net/figures/cof.png?raw=true | width=500) -->
 <img src="leveraging-category-information-for-single-frame-visual-sound-source-separation/figures/overview.png" width="800"/>
 
 The framework of single frame visual sound source separation and localization system. The appearance network A converts the input image I (a random frame of a sequence video) to visual feature maps A(I) and further, with a spacial pooling, to a compact representation e. The sound network S splits the mixture spectrogram X into a set of feature maps S(X). A linear combination of appearance representation e and sound features maps S(X) produces a sound separation mask b. The appearance attention module (red and blue arrows) is formed by a scalar product between the appearance representation e and appearance feature maps A(I). The appearance attention module produces a source location mask p.
 
 
+## Examples of Sound Source Separation
+<!-- ![](cof-net/figures/of_sslm.png?raw=true | width=500) -->
+<img src="leveraging-category-information-for-single-frame-visual-sound-source-separation/figures/locSep_vis_MUSIC.png" width="800"/>
+
+
+## Examples of Sound Source Localization
+<!-- ![](cof-net/figures/of_sslm.png?raw=true | width=500) -->
+<img src="leveraging-category-information-for-single-frame-visual-sound-source-separation/figures/loc_vis_MUSIC_res50_dv3p.png" width="800"/>
+
+
 ## Sound Source Separation Results
 <!-- ![](cof-net/figures/cof.png?raw=true | width=500) -->
-<img src="leveraging-category-information-for-single-frame-visual-sound-source-separation/figures/table1.png" width="800"/>
+<img src="leveraging-category-information-for-single-frame-visual-sound-source-separation/figures/table1.png" width="600"/>
 
 ## Sound Source Separation with Appearance Network
 We combine the appearance network A of Res-18 and Res-50 with sound network S of U-Net and MV2 as four models to compare against: A(Res-18) + S(U-Net), A(Res-18) + S(MV2), A(Res-50) + S(U-Net), and A(Res-50) + S(MV2). We report the corresponding sound separation metrics in Table1 (italic).
@@ -41,16 +52,8 @@ with the SDR: 10.74 of A(CatEmb) + S(MV2).
 ## Visualization of Visual Embedding
 <!-- ![](cof-net/figures/of_sslm.png?raw=true | width=500) -->
 <img src="leveraging-category-information-for-single-frame-visual-sound-source-separation/figures/tsne_res50_MUSIC.png" width="800"/>
+
 We take the framework of A(Res-50) + S(MV2) as an example to visualize the appearance embedding on different conditions (e.g. appearance network, appearance attention, appearance classifier, and CatEmb) with t-SNE in Fig. 3. As we can see, the compactness of both the intra- and inter-class of A(Res-50) embedding is limited. From the A(Res-50) to A(Res-50, att), and A(Res-50, classifier), the learned appearance embedding is pushed more close to the CatEmb in Fig. 3(d).
-
-## Examples of Sound Source Separation
-<!-- ![](cof-net/figures/of_sslm.png?raw=true | width=500) -->
-<img src="leveraging-category-information-for-single-frame-visual-sound-source-separation/figures/locSep_vis_MUSIC.png" width="800"/>
-
-
-## Examples of Sound Source Localization
-<!-- ![](cof-net/figures/of_sslm.png?raw=true | width=500) -->
-<img src="leveraging-category-information-for-single-frame-visual-sound-source-separation/figures/loc_vis_MUSIC_res50_dv3p.png" width="800"/>
 
 
 <!--
