@@ -1,6 +1,5 @@
 ---
-title: Leveraging Category Information for 
-Single-Frame Visual Sound Source Separation
+title: Leveraging Category Information for Single-Frame Visual Sound Source Separation
 layout: default
 ---
 

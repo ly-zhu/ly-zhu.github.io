@@ -3,11 +3,14 @@ title: Visually Guided Sound Source Separation and Localization using Self-Super
 layout: default
 ---
 
-[Paper](https://arxiv.org/pdf/2007.07984.pdf) | [[Code **Coming soon**]]]()
+[Paper](https://arxiv.org/pdf/2007.07984.pdf) | [Code **Coming soon**]()
 <!-- [[Code **Coming soon.**]](...) -->
 
 # Abstract
 The objective of this paper is to perform audio-visual sound source separation, i.e. to separate component audios from a mixture based on the videos of sound sources. Moreover, we aim to pinpoint the source location in the input video sequence. Recent works have shown impressive audio-visual separation results when using prior knowledge of the source type (e.g. human playing instrument) and pre-trained motion detectors (e.g. keypoints or optical flows). However, at the same time, the models are limited to a certain application domain. In this paper, we address these limitations and make the following contributions: i) we propose a two-stage architecture, called Appearance and Motion network (AMnet), where the stages specialise to appearance and motion cues, respectively. The entire system is trained in a self-supervised manner; ii) we introduce an Audio-Motion Embedding (AME) framework to explicitly represent the motions that related to sound; iii) we propose an audio-motion transformer architecture for audio and motion feature fusion; iv) we demonstrate state-of-the-art performance on two challenging datasets (MUSIC-21 and AVE) despite the fact that we do not use any pre-trained keypoint detectors or optical flow estimators.
+
+## Sound Source Separation Results
+<img src="self-supervised-motion-representations/figures/sep_diff_MUSIC21.png" width="600"/>
 
 ## Examples of Separating different type of sources
 <img src="self-supervised-motion-representations/figures/sep_diff.png" width="800"/>
@@ -17,7 +20,6 @@ The objective of this paper is to perform audio-visual sound source separation, 
 
 ## Examples of Sound Source Localization
 <img src="self-supervised-motion-representations/figures/loc.png" width="800"/>
-
 
 ## The overall architecture of the proposed Appearance and Motion network (AMnet)
 <img src="self-supervised-motion-representations/figures/overview.png" width="800"/>
@@ -47,9 +49,6 @@ Previous works using audio-visual synchronization for self-supervised representa
 <img src="self-supervised-motion-representations/figures/AMT.png" width="800"/>
 
 The Audio-Motion Transformer (AMT) module is used to leverage the obtained motion cues (the motions of sound learned with AME) for sound source separation.
-
-## Sound Source Separation Results
-<img src="self-supervised-motion-representations/figures/sep_diff_MUSIC21.png" width="600"/>
 
 
 ## Citation
