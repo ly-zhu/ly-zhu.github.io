@@ -3,7 +3,7 @@ title: Visually Guided Sound Source Separation and Localization using Self-Super
 layout: default
 ---
 
-[Paper](https://arxiv.org/pdf/2007.07984.pdf) | [Code **Coming soon**]()
+[Paper](https://arxiv.org/pdf/2104.08506.pdf) | [Code **Coming soon**]()
 <!-- [[Code **Coming soon.**]](...) -->
 
 # Abstract
@@ -53,12 +53,13 @@ The Audio-Motion Transformer (AMT) module is used to leverage the obtained motio
 
 ## Citation
 ```bibtex   
-InProceedings{Zhu_2020_ACCV,
-    author    = {Zhu, Lingyu and Rahtu, Esa},
-    title     = {Visually Guided Sound Source Separation using Cascaded Opponent Filter Network},
-    booktitle = {Proceedings of the Asian Conference on Computer Vision (ACCV)},
-    month     = {November},
-    year      = {2020}
+@misc{zhu2021visually,
+      title={Visually Guided Sound Source Separation and Localization using Self-Supervised Motion Representations}, 
+      author={Lingyu Zhu and Esa Rahtu},
+      year={2021},
+      eprint={2104.08506},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
 }
 ```
 
