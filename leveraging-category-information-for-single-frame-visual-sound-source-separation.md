@@ -71,13 +71,13 @@ We take the framework of A(Res-50) + S(MV2) as an example to visualize the appea
 
 ## Citation
 ```bibtex   
-    @misc{zhu2020separating,
-    title={Separating Sounds from a Single Image},
-    author={Lingyu Zhu and Esa Rahtu},
-    year={2020},
-    eprint={2007.07984},
-    archivePrefix={arXiv},
-    primaryClass={cs.CV}
+@misc{zhu2021leveraging,
+      title={Leveraging Category Information for Single-Frame Visual Sound Source Separation}, 
+      author={Lingyu Zhu and Esa Rahtu},
+      year={2021},
+      eprint={2007.07984},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
 }
 ```
 
