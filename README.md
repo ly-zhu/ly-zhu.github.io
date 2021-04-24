@@ -5,7 +5,7 @@
 
   project webpage: https://ly-zhu.github.io/self-supervised-motion-representations
 
-  Paper: https://arxiv.org/pdf/2007.07984.pdf
+  Paper: https://arxiv.org/pdf/2104.08506.pdf 
 
 
 * Leveraging Category Information for Single-Frame Visual Sound Source Separation
