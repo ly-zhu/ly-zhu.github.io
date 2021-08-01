@@ -3,8 +3,7 @@ title: Visually Guided Sound Source Separation using Cascaded Opponent Filter Ne
 layout: default
 ---
 
-[Paper](https://openaccess.thecvf.com/content/ACCV2020/papers/Zhu_Visually_Guided_Sound_Source_Separation_using_Cascaded_Opponent_Filter_Network_ACCV_2020_paper.pdf) | [ACCV2020(**Oral**)](http://accv2020.kyoto)
-<!-- [[Code **Coming soon.**]](https://github.com/ly-zhu/cof-net) -->
+[ACCV2020(**Oral**)](https://openaccess.thecvf.com/content/ACCV2020/papers/Zhu_Visually_Guided_Sound_Source_Separation_using_Cascaded_Opponent_Filter_Network_ACCV_2020_paper.pdf) | [Code](https://github.com/ly-zhu/cof-net)
 
 # Abstract
 The objective of this paper is to recover the original component signals from a mixture audio with the aid of visual cues of the sound sources. Such task is usually referred as visually guided sound source separation. The proposed Cascaded Opponent Filter (COF) framework consists of multiple stages, which recursively refine the source separation. A key element in COF is a novel opponent filter module that identifies and relocates residual components between sources. The system is guided by the appearance and motion of the source, and, for this purpose, we study different representations based on video frames, optical flows, dynamic images, and their combinations. Finally, we propose a Sound Source Location Masking (SSLM) technique, which, together with COF, produces a pixel level mask of the source location. The entire system is trained in an end-to-end manner using a large set of unlabelled videos. We compare COF with recent baselines and obtain the state-of-the-art performance in three challenging datasets (MUSIC, A-MUSIC, and A-NATURAL).
@@ -64,12 +63,11 @@ Sound Source Location Masking (SSLM) network identifies a minimum set of input p
 
 ## Citation
 ```bibtex   
-InProceedings{Zhu_2020_ACCV,
-    author    = {Zhu, Lingyu and Rahtu, Esa},
-    title     = {Visually Guided Sound Source Separation using Cascaded Opponent Filter Network},
-    booktitle = {Proceedings of the Asian Conference on Computer Vision (ACCV)},
-    month     = {November},
-    year      = {2020}
+@inproceedings{zhu2020visually,
+  title={Visually guided sound source separation using cascaded opponent filter network},
+  author={Zhu, Lingyu and Rahtu, Esa},
+  booktitle={Proceedings of the Asian Conference on Computer Vision},
+  year={2020}
 }
 ```
 
