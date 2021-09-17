@@ -1,6 +1,13 @@
 # Personal webpage   https://ly-zhu.github.io
 # projects page
 
+* V-SlowFast Network for Efficient Visual Sound Separation
+
+  project webpage: https://ly-zhu.github.io/V-SlowFast
+
+  Paper: https://arxiv.org/pdf/2104.08506.pdf 
+
+
 * Visually Guided Sound Source Separation and Localization using Self-Supervised Motion Representations
 
   project webpage: https://ly-zhu.github.io/self-supervised-motion-representations
