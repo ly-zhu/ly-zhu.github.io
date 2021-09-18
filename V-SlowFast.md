@@ -3,7 +3,7 @@ title: V-SlowFast Network for Efficient Visual Sound Separation
 layout: default
 ---
 
-[Paper](https://arxiv.org/pdf/2104.08506.pdf) | [Code **Coming soon**]()
+[Paper](https://arxiv.org/submit/3935177/view) | [Code **Coming soon**]()
 <!-- [[Code **Coming soon.**]](...) -->
 
 <img src="V-SlowFast/figures/fig1.png" width="800"/>
@@ -22,17 +22,6 @@ The goal of the visual sound separation is to extract the component audio that c
 
 The reported results summarize the performance in comparison with recent single frame methods Sound of Pixels [64], Minus-Plus [61] and Cascaded Opponent Filter (COF) [65] on MUSIC-21, AVE and VGGSound datasets using mixtures of two sound sources (N=2).
 
-## Citation
-```bibtex   
-@misc{zhu2021visually,
-      title={Visually Guided Sound Source Separation and Localization using Self-Supervised Motion Representations}, 
-      author={Lingyu Zhu and Esa Rahtu},
-      year={2021},
-      eprint={2104.08506},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
-}
-```
 
 <img src="images/logo_tau.png" width="288">
 <!-- ![Octocat](images/logo_tau.png?raw=true | width=288) -->
