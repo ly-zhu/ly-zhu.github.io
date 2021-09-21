@@ -3,7 +3,7 @@ title: V-SlowFast Network for Efficient Visual Sound Separation
 layout: default
 ---
 
-[Paper](https://arxiv.org/submit/3935177/view) | [Code **Coming soon**]()
+[Paper](https://arxiv.org/pdf/2109.08867.pdf) | [Code **Coming soon**]()
 <!-- [[Code **Coming soon.**]](...) -->
 
 <img src="V-SlowFast/figures/fig1.png" width="800"/>
