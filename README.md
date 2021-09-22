@@ -5,7 +5,7 @@
 
   project webpage: https://ly-zhu.github.io/V-SlowFast
 
-  Paper: https://arxiv.org/pdf/2109.08867v1.pdf 
+  Paper: https://arxiv.org/abs/2109.08867 
 
 
 * Visually Guided Sound Source Separation and Localization using Self-Supervised Motion Representations
