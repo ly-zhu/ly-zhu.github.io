@@ -3,7 +3,7 @@ title: Visually Guided Sound Source Separation and Localization using Self-Super
 layout: default
 ---
 
-[Paper](https://arxiv.org/pdf/2104.08506.pdf) | [Code **Coming soon**]()
+[WACV2022 Paper](https://arxiv.org/pdf/2104.08506.pdf) | [Code **Coming soon**]()
 <!-- [[Code **Coming soon.**]](...) -->
 
 # Abstract
