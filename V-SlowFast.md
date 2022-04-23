@@ -3,7 +3,7 @@ title: V-SlowFast Network for Efficient Visual Sound Separation
 layout: default
 ---
 
-[WACV2022 Paper](https://arxiv.org/abs/2109.08867) | [Code **Coming soon**]()
+[WACV2022 Paper](https://openaccess.thecvf.com/content/WACV2022/papers/Zhu_V-SlowFast_Network_for_Efficient_Visual_Sound_Separation_WACV_2022_paper.pdf) | [Code **Coming soon**]()
 <!-- [[Code **Coming soon.**]](...) -->
 
 <img src="V-SlowFast/figures/fig1.png" width="800"/>

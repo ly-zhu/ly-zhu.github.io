@@ -3,7 +3,7 @@ title: Visually Guided Sound Source Separation and Localization using Self-Super
 layout: default
 ---
 
-[WACV2022 Paper](https://arxiv.org/pdf/2104.08506.pdf) | [Code **Coming soon**]()
+[WACV2022 Paper](https://openaccess.thecvf.com/content/WACV2022/papers/Zhu_Visually_Guided_Sound_Source_Separation_and_Localization_Using_Self-Supervised_Motion_WACV_2022_paper.pdf) | [Code **Coming soon**]()
 <!-- [[Code **Coming soon.**]](...) -->
 
 # Abstract

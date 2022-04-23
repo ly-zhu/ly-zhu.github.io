@@ -3,7 +3,7 @@ title: Leveraging Category Information for Single-Frame Visual Sound Source Sepa
 layout: default
 ---
 
-[Paper](https://arxiv.org/pdf/2007.07984.pdf) | [Code](https://github.com/ly-zhu/Leveraging-Category-Information-for-Single-Frame-Visual-Sound-Source-Separation)
+[Paper](https://ieeexplore.ieee.org/abstract/document/9484036) | [Code](https://github.com/ly-zhu/Leveraging-Category-Information-for-Single-Frame-Visual-Sound-Source-Separation)
 
 
 # Abstract
