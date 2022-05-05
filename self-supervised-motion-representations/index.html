@@ -6,6 +6,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <title>self-supervised-motion-representations</title>
+
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -88,7 +89,7 @@
                     The overall architecture of the proposed Appearance and Motion network (AMnet)
                 </h3>
                 <div class="text-center">
-                    <div style="position:relative;padding-top:60%;">
+                    <div style="position:relative;padding-top:40%;">
                         <img src='figures/overview.png' style="position:absolute;top:0;left:0;width:100%"><br>
                         <p class="text-justify">
                             The overall architecture of the proposed Appearance and Motion network (AMnet). The Audio-Appearance stage encodes a video keyframe and a mixture audio spectrogram into an appearance feature vector and a spectrum feature volume, respectively. These are subsequently fused by calculating a weighted sum of spectrum features using appearance features as weights. The result is further converted to a binary mask and multiplied with the input spectrogram to produce the separated output. The Audio-Motion stage again encodes the spectrograms and the video sequence into feature representations. These are fused with the proposed Audio-Motion Transformer module, decoded, and passed to produce a refined mask, which is multiplied with the input mixture spectrogram to produce the final output.
@@ -166,7 +167,7 @@
                     Sound Source Separation Results
                 </h3>
                 <div class="text-center">
-                    <div style="position:relative;padding-top:30%;">
+                    <div style="position:relative;padding-top:50%;">
                         <img src='figures/sep_diff_MUSIC21.png' style="position:absolute;top:0;left:0;width:100%"><br>
                     </div>
                 </div>
@@ -179,7 +180,7 @@
                     Examples of Separating different type of sources
                 </h3>
                 <div class="text-center">
-                    <div style="position:relative;padding-top:30%;">
+                    <div style="position:relative;padding-top:50%;">
                         <img src='figures/sep_diff.png' style="position:absolute;top:0;left:0;width:100%"><br>
                     </div>
                 </div>
@@ -192,7 +193,7 @@
                     Examples of Separating same type of sources
                 </h3>
                 <div class="text-center">
-                    <div style="position:relative;padding-top:30%;">
+                    <div style="position:relative;padding-top:50%;">
                         <img src='figures/sep_same.png' style="position:absolute;top:0;left:0;width:100%"><br>
                     </div>
                 </div>
@@ -206,14 +207,14 @@
                     Examples of Sound Source Localization
                 </h3>
                 <div class="text-center">
-                    <div style="position:relative;padding-top:30%;">
+                    <div style="position:relative;padding-top:50%;">
                         <img src='figures/loc.png' style="position:absolute;top:0;left:0;width:100%"><br>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="row" style="position:relative;padding-top:10%;">
+        <div class="row" style="position:relative;padding-top:30%;">
             <div class="col-md-8 col-md-offset-2" >
                 <h3>
                     Citation
