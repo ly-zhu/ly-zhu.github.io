@@ -26,11 +26,11 @@
 <body>
     <div class="container" id="main">
         <div class="row">
-            <h1 class="col-md-12 text-center">
+            <h2 class="col-md-12 text-center">
                 <b> Visually Guided Sound Source Separation and Localization using Self-Supervised Motion Representations</b>
                 <small>
                 </small>
-            </h1>
+            </h2>
         </div>
 
         <div class="row">
@@ -88,7 +88,7 @@
                     The overall architecture of the proposed Appearance and Motion network (AMnet)
                 </h3>
                 <div class="text-center">
-                    <div style="position:relative;padding-top:60%;">
+                    <div style="position:relative;padding-top:30%;">
                         <img src='figures/overview.png' style="position:absolute;top:0;left:0;width:100%"><br>
                         <p class="text-justify">
                             The overall architecture of the proposed Appearance and Motion network (AMnet). The Audio-Appearance stage encodes a video keyframe and a mixture audio spectrogram into an appearance feature vector and a spectrum feature volume, respectively. These are subsequently fused by calculating a weighted sum of spectrum features using appearance features as weights. The result is further converted to a binary mask and multiplied with the input spectrogram to produce the separated output. The Audio-Motion stage again encodes the spectrograms and the video sequence into feature representations. These are fused with the proposed Audio-Motion Transformer module, decoded, and passed to produce a refined mask, which is multiplied with the input mixture spectrogram to produce the final output.
@@ -104,7 +104,7 @@
                     Audio-Motion Embedding Framework
                 </h3>
                 <div class="text-center">
-                    <div style="position:relative;padding-top:80%;">
+                    <div style="position:relative;padding-top:30%;">
                         <img src='figures/AME.png' style="position:absolute;top:0;left:0;width:100%"><br>
                         <p class="text-justify">
                             The proposed Audio-Motion Embedding (AME) framework exploits the natural correlation between the audio and motion of a natural video. The AME framework (see Figure~\ref{fig:AVTA}) consists of Motion Network and Sound Network, which map the motion and audio sequences into a common embedding space, respectively. We formulate the learning objectives to enforce small embedding distances between well synchronised streams and large distances for out-of-sync streams. We hypothesize that this learning objective encourages the Motion Network to focus mainly on the sound related motion features in the input video.
@@ -150,7 +150,7 @@
                     Audio-Motion Transformer
                 </h3>
                 <div class="text-center">
-                    <div style="position:relative;padding-top:85%;">
+                    <div style="position:relative;padding-top:30%;">
                         <img src='figures/AMT.png' style="position:absolute;top:0;left:0;width:100%"><br>
                         <p class="text-justify">
                             The Audio-Motion Transformer (AMT) module is used to leverage the obtained motion cues (the motions of sound learned with AME) for sound source separation.
@@ -166,7 +166,7 @@
                     Sound Source Separation Results
                 </h3>
                 <div class="text-center">
-                    <div style="position:relative;padding-top:85%;">
+                    <div style="position:relative;padding-top:303030303030303030303030303030303030303030303030303030303030%;">
                         <img src='figures/sep_diff_MUSIC21.png' style="position:absolute;top:0;left:0;width:100%"><br>
                     </div>
                 </div>
@@ -179,7 +179,7 @@
                     Examples of Separating different type of sources
                 </h3>
                 <div class="text-center">
-                    <div style="position:relative;padding-top:85%;">
+                    <div style="position:relative;padding-top:30%;">
                         <img src='figures/sep_diff.png' style="position:absolute;top:0;left:0;width:100%"><br>
                     </div>
                 </div>
@@ -192,7 +192,7 @@
                     Examples of Separating same type of sources
                 </h3>
                 <div class="text-center">
-                    <div style="position:relative;padding-top:85%;">
+                    <div style="position:relative;padding-top:30%;">
                         <img src='figures/sep_same.png' style="position:absolute;top:0;left:0;width:100%"><br>
                     </div>
                 </div>
@@ -206,14 +206,14 @@
                     Examples of Sound Source Localization
                 </h3>
                 <div class="text-center">
-                    <div style="position:relative;padding-top:85%;">
+                    <div style="position:relative;padding-top:30%;">
                         <img src='figures/loc.png' style="position:absolute;top:0;left:0;width:100%"><br>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="row" style="position:relative;padding-top:00%;">
+        <div class="row" style="position:relative;padding-top:10%;">
             <div class="col-md-8 col-md-offset-2" >
                 <h3>
                     Citation
