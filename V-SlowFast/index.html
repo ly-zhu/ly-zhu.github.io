@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>COF-Net</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:image" content="https://ly-zhu.github.io/V-SlowFast/figures/fig1.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="983">
+    <meta property="og:image:height" content="400">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ly-zhu.github.io/V-SlowFast/"/>
+    <meta property="og:title" content="V-SlowFast Network for Efficient Visual Sound Separation" />
+    <meta property="og:description" content="" />
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💫</text></svg>">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    
+    <script src="assets/js/app.js"></script>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center">
+                <br> V-SlowFast Network for Efficient Visual Sound Separation</br>
+                <small>
+                </small>
+            </h2>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://ly-zhu.github.io/"> Lingyu Zhu </a>
+                        </br> Tampere University
+                    </li>
+                    
+                    <li>
+                        <a href="https://esa.rahtu.fi/"> Esa Rahtu </a>
+                        </br> Tampere University
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    <div class="row">
+                <div class="col-md-4 col-md-offset-4 text-center">
+                    <ul class="nav nav-pills nav-justified">
+                        <li>
+                            <a href="https://openaccess.thecvf.com/content/WACV2022/papers/Zhu_V-SlowFast_Network_for_Efficient_Visual_Sound_Separation_WACV_2022_paper.pdf">
+                            <image src="figures/paper_img.png" height="40px">
+                                <h5><strong>Paper</strong></h5>
+                            </a>
+                        </li>
+
+                        <!--
+                        <li>
+                            <a href="https://github.com/ly-zhu/cof-net">
+                            <image src="https://ly-zhu.github.io/images/github_icon.png" height="40px">
+                                <h5><strong>Code</strong></h5>
+                            </a>
+                        </li>
+                        -->
+
+                    </ul>
+                </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Abstract
+                </h3>
+                <div class="text-center">
+                    <div style="position:relative;padding-top:60%;">
+                        <img src='figures/fig1.png' style="position:absolute;top:0;left:0;width:80%;padding-left:20%">
+                        <p class="text-justify">
+                            The objective of this paper is to perform visual sound separation: i) we study visual sound separation on spectrograms of different temporal resolutions; ii) we propose a new light yet efficient three-stream framework V-SlowFast that operates on Visual frame, Slow spectrogram, and Fast spectrogram. The Slow spectrogram captures the coarse temporal resolution while the Fast spectrogram contains the fine-grained temporal resolution; iii) we introduce two contrastive objectives to encourage the network to learn discriminative visual features for separating sounds; iv) we propose an audio-visual global attention module for audio and visual feature fusion; v) the introduced V-SlowFast model outperforms previous state-of-the-art in single-frame based visual sound separation on small- and large-scale datasets: MUSIC-21, AVE, and VGG-Sound. We also propose a small V-SlowFast architecture variant, which achieves 74.2% reduction in the number of model parameters and 81.4% reduction in GMACs compared to the previous multi-stage models.
+                       </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Architecture
+                </h3>
+                <div class="text-center">
+                    <div style="position:relative;padding-top:60%;">
+                        <img src='figures/overview.png' style="position:absolute;top:0;left:0;width:80%;padding-left:20%">
+                        <p class="text-justify">
+                            The goal of the visual sound separation is to extract the component audio that corresponds to the sound source in the given visual frame. The proposed V-SlowFast network contains four components: vision network, audio-visual global attention module, slow spectrogram network, and fast spectrogram residual network. The vision network randomly extracts a single frame from the input video sequence and encodes it into a feature vector. To enhance the discrimination between semantic categories, we randomly sample an additional visual frame from a same (positive) or different (negative) category video to make contrastive pairs during the training procedure. We apply two visual contrastive objectives (embedding and localization) to the contrastive pairs along the vision network. The audio-visual global attention module fuses the visual embedding with sound features. The slow spectrogram network performs source separation at the coarse time scale (low sampling rate) using appearance features. The obtained result and the original mixture are further passed to the fast spectrogram residual network, which refines the source separation using spectrogram with higher temporal resolution (high sampling rate).
+                       </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Source separation performance in comparison with recent works (separating two sound sources)
+                </h3>
+                <div class="text-center">
+                    <div style="position:relative;padding-top:80%;">
+                        <img src='figures/result.png' style="position:absolute;top:0;left:0;width:80%;padding-left:20%">
+                        <p class="text-justify">
+                            Table 1 summarizes the results in comparison with recent single frame methods Sound of Pixels , Minus-Plus and Cascaded Opponent Filter (COF) on MUSIC-21, AVE and VGGSound datasets using mixtures of two sound sources (N=2). We observe that our method consistently outperforms all baselines. Impressively, our system V-SlowFast (1) outperforms previous state-of-the-art multi-stage method by 1.39dB on MUSIC-21, 0.41dB on AVE, and 0.66dB on VGG-Sound in terms of SDR while having substantially less parameters and small computational cost.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+            <h3>
+                Separating More Sound Sources
+            </h3>
+                <div class="text-center">
+                    <div style="position:relative;padding-top:30%;">
+                        <img src='figures/sep_3_4.png' style="position:absolute;top:0;left:0;width:100%;padding-left:0%">
+                        <p class="text-justify">
+                            A more challenging task is to separate a sound mixture that contains more than wo sources. To this end, we assess the approaches by separating mixtures of three and four sources using MUSIC-21 dataset. We report the separation performance of VSlowFast and the baselines in Table 2. VSlowFast outperforms the baselines with a clear margin for separating mixtures of three and fours sources.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Separating Sound from Background Noises
+                </h3>
+                <div class="text-center">
+                    <div style="position:relative;padding-top:30%;">
+                        <img src='figures/copypaste.png' style="position:absolute;top:0;left:0;width:100%">
+                        <p class="text-justify">
+                            Due to the lack of ground truth for the source, assessing the performance in fully natural scenarios is difficult. However, we collect 100 natural background audios (retrieved from YouTube with keyword “background noise”) to mix with available sources. Table 3 shows that our V-SlowFast models outperform all baselines on separating target sound from noisy mixture. “Copy-Paste” uses input mixture as output. Note that the previous work of Cascaded Opponent Filter requires the knowledge of all the presenting sources within the sound mixture to separate each sound source. Instead of relaying on the visual cues of other sources, our V-SlowFast model is proposed to efficiently separate the interested sound with only its associated visual information.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" >
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Different Spectrogram Resolutions
+                </h3>
+                <div class="text-center">
+                    <div style="position:relative;padding-top:85%;">
+                        <img src='figures/diff_resolu.png' style="position:absolute;top:0;left:0;width:85%;padding-left:15%">
+                        <p class="text-justify">
+                            In Table 4, we report the visual sound separation performance on different spectrogram temporal resolutions (α ∈ {1, 2, 4, 8, 16}). We observe that with a larger value of downsampling rate α (lower temporal resolution), the model converges earlier. The smaller temporal resolution the input spectrogram has, the lower evaluation scores of SDR and SIR the models obtain.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" >
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Visual Contrastive Learning
+                </h3>
+                <div class="text-center">
+                    <div style="position:relative;padding-top:85%;">
+                        <img src='figures/contrast.png' style="position:absolute;top:0;left:0;width:85%;padding-left:15%">
+                        <p class="text-justify">
+                            We report the experiments result of using visual contrastive learning in Table 4 (Contrast). Note that the contrastive learning objective is only considered during training procedure. Thus, it does not bring extra operations for inference. As reported in Table 4, the visual contrastive learning improves the separation score by the gain of around 0.6dB in SDR for all the α. For better visualizing the improvement the visual contrastive learning brings to Res-18 + AVGA model, we display  the bar chart percentage of separation results over a wide range of SDR thresholds in Figure 4. The performance gap shows that the models using contrastive learning surpasss baseline with a large margin especially when the SDR threshold is ≥ 7.0. The contrastive learning allows the vision network to learn discriminative visual features and further improve the separation performance.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" >
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Architecture Variants of the Sound Network
+                </h3>
+                <div class="text-center">
+                    <div style="position:relative;padding-top:85%;">
+                        <img src='figures/model_variant.png' style="position:absolute;top:0;left:0;width:85%;padding-left:15%">
+                        <p class="text-justify">
+                            The architecture of the above mentioned sound spectrogram network is 7 up- and 7 down-convolutional layers U-Net, which is referred as U-Net (7-layer). In this section, we study how the model performs on different spectrogram resolutions when sing less (5-layer) or more (9-layer) convolutional layers U-Net as the sound spectrogram network. Table 5 summarises the evaluation metrics, number of parameters and operations when using vision network of Res-18 + AVGA + Contrast and sound spectrogram network of U-Net (5-, 7-, 9-layer) with different α. We observe performance decrease when using shallower U-Net, and performance in crease when using deeper U-Net for all the α. In addition, for smaller α (high temporal resolution), the performance increases a larger margin (e.g. 1.09dB in SDR of α=1) when switching from U-Net (7-layer) to deeper U-Net (9-layer) in comparison with counterparts of larger α (e.g. 0.58dB in SDR of α=16). Furthermore, using U-Net (9-layer) only increases total 2.22M parameters, and using U-Net (5-layer) outcomes a model with total 17.32M parameters.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row" >
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Visually Guided SlowFast Sound Separation
+                </h3>
+                <div class="text-center">
+                    <div style="position:relative;padding-top:85%;">
+                        <img src='figures/table6.png' style="position:absolute;top:0;left:0;width:85%;padding-left:15%">
+                        <p class="text-justify">
+                            We firstly separate sources using the VSlowFast network V: Res-18+, Slow: U-Net (7-layer), and Fast: U-Net (7-layer) in Table 6 (with αs ∈ {2, 4, 8, 16}, αf = 1). The results with both of the slow and fast spectrograms clearly surpass the network with only single spectrogram model in Table 4, which proposes that treating the slow and fast spectrograms separately is important for the sound separation quality. Inspired by the observation from Table 5, that U-Net (5-layer) is a very light model and UNet (9-layer) can have large performance gain without bring heavy parameters and operations, we design the architecture of the V-SlowFast by using V: Res-18+, Slow: U-Net (5- layer), and Fast: U-Net (9-layer). As is shown in Table 6, with the compromise of around 0.2 ∼ 0.3 more GMACs, the method obtains performance gain (especially for the larger αs) while having 11.95M less parameters for all the experiemnts. In comparison, we also examine how the “VFastSlow” performs, where the fast spectropgram appears first and slow spectrogram occurs second. The V-FastSlow results in similar performance as the V-SlowFast in terms of the evaluation metrics, number of parameters and operations (more details are presented in the supplementary material).Therefore, in this work, we discuss only on the case of V-SlowFast network.
+
+                           Different combinations of αs and αf : We further study how the V-SlowFast performs on different combinations of αs and αf using V: Res-18+, Slow: U-Net (5-layer), and Fast: U-Net (9-layer) in Table 6. We observe clear reduction in computations when using larger αf (e.g. αf =2, 4). The system has a slight performance drop with the increasing of the αs, and the performance drops dramatically with the increasing of the αf , which suggest that the performance of the fast spectrogram network determines the overall result.
+
+                           Smaller architecture variants: In order to separate sound sources more efficiently, we explore the system with smaller architecture variants, e.g. MV2. We adapt MV2 as the vision network (4.52M parameters and 0.12 GMACs), DeepLabV3Plus (MV2 as backbone) as the slow and fast specgrogram networks (5.27M parameters). The performance of the combinations between different model variants for the V-SlowFast framework are presented in Table 6. When using DeepLabV3Plus as the slow spectrogram network, and U-Net (9-layer) as the fast spectrogram residual network, the models with vision network of Res-18+ and MV2+ achieve similar results, e.g. Res-18+: 10.98dB (αs=2, αf =1) and 10.38dB (αs=4, αf =2) of SDR in comparison with MV2+: 10.89dB (αs=2, αf =1) and 10.39dB (αs=4, αf =2). Differently, the vision network of MV2+ outcomes a model with 6.75M less parameters and 0.22 GMACs less operations. Thus, we refer the architecture of V: MV2+, Slow: DeepLabV3Plus, and Fast: U-Net (9-layer) as V-SlowFast (1). Furthermore, when adopting the DeepLabV3Plus as the architecture of the fast spectrogram residual network, the model V: MV2+, Slow: DeepLabV3Plus, and Fast: DeepLabV3Plus obtains close results as the recent single frame based state-of-the-art method COF while only contains total 15.07M model parameters and 0.84 GMACs, which is denoted as V-SlowFast (2). 
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row" style="position:relative;padding-top:00%;">
+            <div class="col-md-8 col-md-offset-2" >
+                <h3>
+                    Citation
+                </h3>
+                <div class="form-group col-md-15 col-md-offset-0">
+                    <textarea id="bibtex" class="form-control" readonly>
+@inproceedings{zhu2022v,
+  title={V-slowfast network for efficient visual sound separation},
+  author={Zhu, Lingyu and Rahtu, Esa},
+  booktitle={Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision},
+  pages={1464--1474},
+  year={2022}
+}
+                </textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

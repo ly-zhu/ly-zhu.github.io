@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>COF-Net</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:image" content="https://ly-zhu.github.io/leveraging-category-information-for-single-frame-visual-sound-source-separation/figures/overview.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1168">
+    <meta property="og:image:height" content="520">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ly-zhu.github.io/leveraging-category-information-for-single-frame-visual-sound-source-separation/"/>
+    <meta property="og:title" content="Leveraging Category Information for Single-Frame Visual Sound Source Separation" />
+    <meta property="og:description" content="" />
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💫</text></svg>">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    
+    <script src="assets/js/app.js"></script>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center">
+                <br> Visually Guided Sound Source Separation using Cascaded Opponent Filter Network</br>
+                <small>
+                </small>
+            </h2>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://ly-zhu.github.io/"> Lingyu Zhu </a>
+                        </br> Tampere University
+                    </li>
+                    
+                    <li>
+                        <a href="https://esa.rahtu.fi/"> Esa Rahtu </a>
+                        </br> Tampere University
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    <div class="row">
+                <div class="col-md-4 col-md-offset-4 text-center">
+                    <ul class="nav nav-pills nav-justified">
+                        <li>
+                            <a href="https://ieeexplore.ieee.org/abstract/document/9484036">
+                            <image src="figures/paper_img.png" height="40px">
+                                <h5><strong>Paper</strong></h5>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://github.com/ly-zhu/Leveraging-Category-Information-for-Single-Frame-Visual-Sound-Source-Separation">
+                            <image src="https://ly-zhu.github.io/images/github_icon.png" height="40px">
+                                <h5><strong>Code</strong></h5>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Abstract
+                </h3>
+                <p class="text-justify">
+                    Visual sound source separation aims at identifying sound components from a given sound mixture with the presence of visual cues. Prior works have demonstrated impressive results, but with the expense of large multi-stage architectures and complex data representations (e.g. optical flow trajectories). In contrast, we study simple yet efficient models for visual sound separation using only a single video frame. Furthermore, our models are able to exploit the information of the sound source category in the separation process. To this end, we propose two models where we assume that i) the category labels are available at the training time, or ii) we know if the training sample pairs are from the same or different category. The experiments with the MUSIC dataset show that our model obtains comparable or better performance compared to several recent baseline methods.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Framework of the single-frame visual sound source separation and localization system
+                </h3>
+                <div class="text-center">
+                    <div style="position:relative;padding-top:60%;">
+                        <img src='figures/overview.png' style="position:absolute;top:0;left:0;width:80%;padding-left:20%">
+                        <p class="text-justify">
+                            The framework of single frame visual sound source separation and localization system. The appearance network A converts the input image I (a random frame of a sequence video) to visual feature maps A(I) and further, with a spacial pooling, to a compact representation e. The sound network S splits the mixture spectrogram X into a set of feature maps S(X). A linear combination of appearance representation e and sound features maps S(X) produces a sound separation mask b. The appearance attention module (red and blue arrows) is formed by a scalar product between the appearance representation e and appearance feature maps A(I). The appearance attention module produces a source location mask p.
+                       </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Examples of Sound Source Separation
+                </h3>
+                <div class="text-center">
+                    <div style="position:relative;padding-top:80%;">
+                        <img src='figures/locSep_vis_MUSIC.png' style="position:absolute;top:0;left:0;width:80%;padding-left:20%">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Examples of Sound Source Localization
+                </h3>
+                <div class="text-center">
+                    <div style="position:relative;padding-top:30%;">
+                        <img src='figures/loc_vis_MUSIC_res50_dv3p.png' style="position:absolute;top:0;left:0;width:100%;padding-left:0%">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Sound Source Separation Results
+                </h3>
+                <div class="text-center">
+                    <div style="position:relative;padding-top:30%;">
+                        <img src='figures/.table1png' style="position:absolute;top:0;left:0;width:100%">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" >
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Sound Source Separation with Appearance Network
+                </h3>
+                <div class="text-center">
+                    <div style="position:relative;padding-top:85%;">
+                        <p class="text-justify">
+                            We combine the appearance network A of Res-18 and Res-50 with sound network S of U-Net and MV2 as four models to compare against: A(Res-18) + S(U-Net), A(Res-18) + S(MV2), A(Res-50) + S(U-Net), and A(Res-50) + S(MV2). We report the corresponding sound separation metrics in Table1 (italic).
+                       </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" >
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Sound Source Separation with Appearance Attention Module
+                </h3>
+                <div class="text-center">
+                    <div style="position:relative;padding-top:85%;">
+                        <p class="text-justify">
+                            As is shown in Table 1, with the same appearance network, the higher capacity the sound network has, the better performance the system achieves, e.g. moving from A(Res-18) + S(U-Net) to A(Res-18) + S(MV2) results in SDR: 2.35dB performance improvement. However, with the same sound network, having the appearance network of higher capacity results in similar performance improvement, e.g. the improvement from A(Res-18) + S(MV2) to A(Res-50) + S(MV2) is only SDR: 0.22dB. Thus, we hypothesize that the appearance embedding that predicted from the appearance network could be further improved for sound separation.
+
+                            To study this, we introduced a light yet efficient appearance attention module to emphasize the semantic distinction of the learned appearance embeddings. We assess the performance of the appearance attention module (denoted as att) for the sound separation task in Table 1. The improvement, e.g. SDR: 1.49dB, of A(Res-18, att) + S(MV2) compared to its counterpart A(Res- 18) + S(MV2), indicates a clear advantage from the appearance attention module.
+                       </p>
+                    </div>
+                </div>
+            </div>
+        </div> 
+
+
+        <div class="row" >
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Sound Source Separation using Category Embeddings
+                </h3>
+                <div class="text-center">
+                    <div style="position:relative;padding-top:85%;">
+                        <p class="text-justify">
+                            We investigate how the category information alone could aid for the sound source separation. For this purpose, we encode the known source category information of a visual frame into binary embedding, namely, Category Embedding (CatEmb). The CatEmb will be a replacement of the learned appearance embedding e from appearance network. At the training phase, we adopt the CatEmb as the appearance cues to separate the target sound components from the sound mixture with the sound network. As is shown in Table 1, with the CatEmb, the sound network of U-Net and MV2 attain the performance of 8.55dB and 10.74dB in SDR respectively. The results suggest how much the existing appearance network could be further improved.
+                       </p>
+                    </div>
+                </div>
+            </div>
+        </div> 
+
+        <div class="row" >
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Sound Source Separation with Appearance Classifier
+                </h3>
+                <div class="text-center">
+                    <div style="position:relative;padding-top:85%;">
+                        <p class="text-justify">
+                            How far could we push the appearance network embedding towards the CatEmb? To answer this question, we first train an appearance classifier when providing the category information, and then adopt it for the sound separation task. Its quantitative result is reported in Table 1. With the appearance classifier, the system pushes its sound separation performance further towards the models that use CatEmb, e.g. the scores of SDR: 10.59 of A(Res-50, classifier) + S(MV2) in comparison with the SDR: 10.74 of A(CatEmb) + S(MV2).
+                       </p>
+                    </div>
+                </div>
+            </div>
+        </div> 
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Visualization of Visual Embedding
+                </h3>
+                <div class="text-center">
+                    <div style="position:relative;padding-top:60%;">
+                        <img src='figures/tsne_res50_MUSIC.png' style="position:absolute;top:0;left:0;width:80%;padding-left:20%">
+                        <p class="text-justify">
+                            We take the framework of A(Res-50) + S(MV2) as an example to visualize the appearance embedding on different conditions (e.g. appearance network, appearance attention, appearance classifier, and CatEmb) with t-SNE in Fig. 3. As we can see, the compactness of both the intra- and inter-class of A(Res-50) embedding is limited. From the A(Res-50) to A(Res-50, att), and A(Res-50, classifier), the learned appearance embedding is pushed more close to the CatEmb in Fig. 3(d).
+                       </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row" style="position:relative;padding-top:00%;">
+            <div class="col-md-8 col-md-offset-2" >
+                <h3>
+                    Citation
+                </h3>
+                <div class="form-group col-md-15 col-md-offset-0">
+                    <textarea id="bibtex" class="form-control" readonly>
+@misc{zhu2021leveraging,
+      title={Leveraging Category Information for Single-Frame Visual Sound Source Separation}, 
+      author={Lingyu Zhu and Esa Rahtu},
+      year={2021},
+      eprint={2007.07984},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
+                </textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
