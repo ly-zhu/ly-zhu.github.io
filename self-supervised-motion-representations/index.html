@@ -109,9 +109,11 @@
                         <img src='figures/AME.png' style="position:absolute;top:0;left:0;width:100%"><br>
                         <p class="text-justify">
                             The proposed Audio-Motion Embedding (AME) framework exploits the natural correlation between the audio and motion of a natural video. The AME framework (see Figure~\ref{fig:AVTA}) consists of Motion Network and Sound Network, which map the motion and audio sequences into a common embedding space, respectively. We formulate the learning objectives to enforce small embedding distances between well synchronised streams and large distances for out-of-sync streams. We hypothesize that this learning objective encourages the Motion Network to focus mainly on the sound related motion features in the input video.
-
+                        </p>
+                        <p class="text-justify">
                             The AME maps the motions and audio into the common embedding space. The mappings are learned in the following manner: i) given a video clip v with an aligned audio x_aligned, we generate a misaligned audio x_misaligned by randomly shifting the waveform in time domain; ii) we encode the video stream, aligned audio, and the misaligned audio into embedding representations using the motion and sound networks, respectively; iii) we calculate the distances between the video embedding and the both audio embeddings, and formulate a cost function using a triplet loss approach; and iv) we optimise the embedding networks by minimizing the loss function over a large set of videos.
-
+                        </p>
+                        <p class="text-justify">
                             Previous works using audio-visual synchronization for self-supervised representation learning formulate the problem as a classification task where the system decides if the given audio and video are synchronized (1) or not (0). Moreover, the information along the temporal dimension is mostly neglected by marginalizing the corresponding dimension with pooling operation. In contrast, we formulate the problem as a mapping from motion and audio domains to a common embedding space, where the distances correlate with the temporal alignment. Moreover, the representation retains the temporal dimension at the output features.
                         </p>
                     </div>
@@ -180,7 +182,7 @@
                     Examples of Separating different type of sources
                 </h3>
                 <div class="text-center">
-                    <div style="position:relative;padding-top:60%;">
+                    <div style="position:relative;padding-top:58%;">
                         <img src='figures/sep_diff.png' style="position:absolute;top:0;left:0;width:100%"><br>
                     </div>
                 </div>
@@ -193,7 +195,7 @@
                     Examples of Separating same type of sources
                 </h3>
                 <div class="text-center">
-                    <div style="position:relative;padding-top:65%;">
+                    <div style="position:relative;padding-top:70%;">
                         <img src='figures/sep_same.png' style="position:absolute;top:0;left:0;width:100%"><br>
                     </div>
                 </div>
@@ -207,14 +209,14 @@
                     Examples of Sound Source Localization
                 </h3>
                 <div class="text-center">
-                    <div style="position:relative;padding-top:70%;">
+                    <div style="position:relative;padding-top:90%;">
                         <img src='figures/loc.png' style="position:absolute;top:0;left:0;width:100%"><br>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="row" style="position:relative;padding-top:50%;">
+        <div class="row" style="position:relative;padding-top:0%;">
             <div class="col-md-8 col-md-offset-2" >
                 <h3>
                     Citation

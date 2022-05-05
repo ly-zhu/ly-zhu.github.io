@@ -117,7 +117,7 @@
                     Examples of Sound Source Localization
                 </h3>
                 <div class="text-center">
-                    <div style="position:relative;padding-top:75%;">
+                    <div style="position:relative;padding-top:85%;">
                         <img src='figures/loc_vis_MUSIC_res50_dv3p.png' style="position:absolute;top:0;left:0;width:100%"><br>
                     </div>
                 </div>
@@ -130,7 +130,7 @@
                     Sound Source Separation Results
                 </h3>
                 <div class="text-center">
-                    <div style="position:relative;padding-top:60%;">
+                    <div style="position:relative;padding-top:40%;">
                         <img src='figures/table1.png' style="position:absolute;top:0;left:0;width:100%"><br>
                     </div>
                 </div>
@@ -161,7 +161,8 @@
                     <div style="position:relative;padding-top:0%;">
                         <p class="text-justify">
                             As is shown in Table 1, with the same appearance network, the higher capacity the sound network has, the better performance the system achieves, e.g. moving from A(Res-18) + S(U-Net) to A(Res-18) + S(MV2) results in SDR: 2.35dB performance improvement. However, with the same sound network, having the appearance network of higher capacity results in similar performance improvement, e.g. the improvement from A(Res-18) + S(MV2) to A(Res-50) + S(MV2) is only SDR: 0.22dB. Thus, we hypothesize that the appearance embedding that predicted from the appearance network could be further improved for sound separation.
-
+                        </p>
+                        <p class="text-justify">
                             To study this, we introduced a light yet efficient appearance attention module to emphasize the semantic distinction of the learned appearance embeddings. We assess the performance of the appearance attention module (denoted as att) for the sound separation task in Table 1. The improvement, e.g. SDR: 1.49dB, of A(Res-18, att) + S(MV2) compared to its counterpart A(Res- 18) + S(MV2), indicates a clear advantage from the appearance attention module.
                        </p>
                     </div>
@@ -206,7 +207,7 @@
                     Visualization of Visual Embedding
                 </h3>
                 <div class="text-center">
-                    <div style="position:relative;padding-top:80%;">
+                    <div style="position:relative;padding-top:85%;">
                         <img src='figures/tsne_res50_MUSIC.png' style="position:absolute;top:0;left:0;width:100%;padding-left:0%"><br>
                         <p class="text-justify">
                             We take the framework of A(Res-50) + S(MV2) as an example to visualize the appearance embedding on different conditions (e.g. appearance network, appearance attention, appearance classifier, and CatEmb) with t-SNE in Fig. 3. As we can see, the compactness of both the intra- and inter-class of A(Res-50) embedding is limited. From the A(Res-50) to A(Res-50, att), and A(Res-50, classifier), the learned appearance embedding is pushed more close to the CatEmb in Fig. 3(d).
