@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>COF-Net</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:image" content="https://ly-zhu.github.io/cof-net/figures/cof.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1033">
+    <meta property="og:image:height" content="434">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ly-zhu.github.io/cof-net/"/>
+    <meta property="og:title" content="Visually Guided Sound Source Separation using Cascaded Opponent Filter Network" />
+    <meta property="og:description" content="" />
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💫</text></svg>">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    
+    <script src="assets/js/app.js"></script>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center">
+                <br> Visually Guided Sound Source Separation using Cascaded Opponent Filter Network</br>
+                <small>
+                </small>
+            </h2>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://ly-zhu.github.io/"> Lingyu Zhu </a>
+                        </br> Tampere University
+                    </li>
+                    
+                    <li>
+                        <a href="https://esa.rahtu.fi/"> Esa Rahtu </a>
+                        </br> Tampere University
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    <div class="row">
+                <div class="col-md-4 col-md-offset-4 text-center">
+                    <ul class="nav nav-pills nav-justified">
+                        <li>
+                            <a href="https://openaccess.thecvf.com/content/ACCV2020/papers/Zhu_Visually_Guided_Sound_Source_Separation_using_Cascaded_Opponent_Filter_Network_ACCV_2020_paper.pdf">
+                            <image src="figures/paper_img.png" height="40px">
+                                <h5><strong>Paper</strong></h5>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://github.com/ly-zhu/cof-net">
+                            <image src="https://ly-zhu.github.io/images/github_icon.png" height="40px">
+                                <h5><strong>Code</strong></h5>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Abstract
+                </h3>
+                <p class="text-justify">
+                    The objective of this paper is to recover the original component signals from a mixture audio with the aid of visual cues of the sound sources. Such task is usually referred as visually guided sound source separation. The proposed Cascaded Opponent Filter (COF) framework consists of multiple stages, which recursively refine the source separation. A key element in COF is a novel opponent filter module that identifies and relocates residual components between sources. The system is guided by the appearance and motion of the source, and, for this purpose, we study different representations based on video frames, optical flows, dynamic images, and their combinations. Finally, we propose a Sound Source Location Masking (SSLM) technique, which, together with COF, produces a pixel level mask of the source location. The entire system is trained in an end-to-end manner using a large set of unlabelled videos. We compare COF with recent baselines and obtain the state-of-the-art performance in three challenging datasets (MUSIC, A-MUSIC, and A-NATURAL).
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    The Architecture of COF-Net
+                </h3>
+                <div class="text-center">
+                    <div style="position:relative;padding-top:60%;">
+                        <img src='figures/cof.png' style="position:absolute;top:0;left:0;width:80%;padding-left:20%">
+                        <p class="text-justify">
+                            The overall architecture of the proposed Cascaded Opponent Filter (COF) network. COF operates in multiple stages. The first stage contains three components: 1) a sound network that splits the input spectrogram into a set of feature maps; 2) a vision network that converts the input video sequences into compact representations; and 3) a sound separator that produces spectrograms of the component audios (one per video) based on the outputs of the sound and vision networks. The second stage contains similar sound and vision networks as the first one (internal details may differ). However, instead of the sound separator, the second stage contains a special opponent filter (OF) module, which enhances the separation result by transferring sound components between the sources. The output of the filter is passed to the next stage or used as the final output. The following stages are identical to the second one and, for this reason, we refer our method as cascaded opponent filter (COF) network. The final component audios are produced by applying the inverse STFT to the component spectrograms.
+                       </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Vision Network
+                </h3>
+                <div class="text-center">
+                    <div style="position:relative;padding-top:80%;">
+                        <img src='figures/vision.png' style="position:absolute;top:0;left:0;width:80%;padding-left:20%">
+                        <p class="text-justify">
+                            The vision network aims at converting the input video sequence (or keyframe) into a compact representation that contains the necessary information of the sound source. Sometimes already a pure appearance of the source (e.g. instru- ment type) might be sufficient, but, in most cases, the motions are vital cues to facilitate the source separation (e.g. hand motion, mouth motion, etc.). The appropriate representation may have high model/computation complexity and, to seek for a balance between computational complexity and performance, we study several visual representation options.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+            <h3>
+                Opponent Filter (OF)
+            </h3>
+                <div class="text-center">
+                    <div style="position:relative;padding-top:30%;">
+                        <img src='figures/of.png' style="position:absolute;top:0;left:0;width:100%;padding-left:0%">
+                        <p class="text-justify">
+                            The main idea in the Opponent Filter (OF) module is to use visual representation of the source n to identify spectrum components from the source m that should belong to source n but are currently assigned to m. These are then transferred from source m to n. The motivation behind the construction is to utilise all visual representations z1,…,zn to determine each component audio, instead of using only the corresponding one.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Sound Source Location Masking Network (SSLM)
+                </h3>
+                <div class="text-center">
+                    <div style="position:relative;padding-top:30%;">
+                        <img src='figures/sslm.png' style="position:absolute;top:0;left:0;width:100%">
+                        <p class="text-justify">
+                            Sound Source Location Masking (SSLM) network identifies a minimum set of input pixels, for which the COF-Net would produce almost identical output as for the entire image. The SSLM is trained together with the overall model. The input video frames are first passed through the SSLM component which outputs a weighted location mask [0,1] having same spatial size as the input frame. The input video frames are multiplied element-wise with the mask, and the result is passed to the COF model.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" >
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Examples of Sound Source Separation
+                </h3>
+                <div class="text-center">
+                    <div style="position:relative;padding-top:85%;">
+                        <img src='sep.png' style="position:absolute;top:0;left:0;width:85%;padding-left:15%">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" >
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Examples of Sound Source Localization 
+                </h3>
+                <div class="text-center">
+                    <div style="position:relative;padding-top:85%;">
+                        <img src='loc.png' style="position:absolute;top:0;left:0;width:85%;padding-left:15%">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="position:relative;padding-top:00%;">
+            <div class="col-md-8 col-md-offset-2" >
+                <h3>
+                    Citation
+                </h3>
+                <div class="form-group col-md-15 col-md-offset-0">
+                    <textarea id="bibtex" class="form-control" readonly>
+@inproceedings{zhu2020visually,
+  title={Visually guided sound source separation using cascaded opponent filter network},
+  author={Zhu, Lingyu and Rahtu, Esa},
+  booktitle={Proceedings of the Asian Conference on Computer Vision},
+  year={2020}
+}   
+                </textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
