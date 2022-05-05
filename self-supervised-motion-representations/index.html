@@ -5,43 +5,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>COF-Net</title>
+    <title>self-supervised-motion-representations</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta property="og:image" content="https://ly-zhu.github.io/self-supervised-motion-representations/figures/AME.png">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="724">
-    <meta property="og:image:height" content="232">
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://ly-zhu.github.io/self-supervised-motion-representations/"/>
-    <meta property="og:title" content="Visually Guided Sound Source Separation and Localization using Self-Supervised Motion Representations" />
-    <meta property="og:description" content="" />
+    <link rel="icon" type="image/png" href="https://ly-zhu.github.io/images/zhu_icon.jpeg">
 
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💫</text></svg>">
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
-    <link rel="stylesheet" href="assets/css/app.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://ly-zhu.github.io/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://ly-zhu.github.io/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://ly-zhu.github.io/assets/css/codemirror.min.css">
+    <link rel="stylesheet" href="https://ly-zhu.github.io/assets/css/app.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
-    
-    <script src="assets/js/app.js"></script>
+    <script src="https://ly-zhu.github.io/assets/js/app.js"></script>
 </head>
 
 <body>
     <div class="container" id="main">
         <div class="row">
-            <h2 class="col-md-12 text-center">
-                <br> Visually Guided Sound Source Separation and Localization using Self-Supervised Motion Representations</br>
+            <h1 class="col-md-12 text-center">
+                <b> Visually Guided Sound Source Separation and Localization using Self-Supervised Motion Representations</b>
                 <small>
                 </small>
-            </h2>
+            </h1>
         </div>
 
         <div class="row">
@@ -60,25 +49,24 @@
             </div>
         </div>
 
-    <div class="row">
+        <div class="row">
                 <div class="col-md-4 col-md-offset-4 text-center">
                     <ul class="nav nav-pills nav-justified">
                         <li>
                             <a href="https://openaccess.thecvf.com/content/WACV2022/papers/Zhu_Visually_Guided_Sound_Source_Separation_and_Localization_Using_Self-Supervised_Motion_WACV_2022_paper.pdf">
-                            <image src="figures/paper_img.png" height="40px">
-                                <h5><strong>Paper</strong></h5>
+                            <image src="figures/paper_img.png" height="120px"><br>
+                                <h4><strong>Paper</strong></h4>
                             </a>
                         </li>
 
-                        <!--
                         <li>
-                            <a href="https://github.com/ly-zhu/cof-net">
-                            <image src="https://ly-zhu.github.io/images/github_icon.png" height="40px">
-                                <h5><strong>Code</strong></h5>
-                            </a>
-                        </li>
+                        <!--
+                        <a href="https://github.com/ly-zhu/cof-net">
                         -->
-
+                        <image src="https://ly-zhu.github.io/images/github_icon.png" height="120px"><br>
+                            <h4><strong>Code</strong></h4>
+                        </a>
+                    </li>
                     </ul>
                 </div>
         </div>
@@ -101,7 +89,7 @@
                 </h3>
                 <div class="text-center">
                     <div style="position:relative;padding-top:60%;">
-                        <img src='figures/overview.png' style="position:absolute;top:0;left:0;width:80%;padding-left:20%">
+                        <img src='figures/overview.png' style="position:absolute;top:0;left:0;width:100%"><br>
                         <p class="text-justify">
                             The overall architecture of the proposed Appearance and Motion network (AMnet). The Audio-Appearance stage encodes a video keyframe and a mixture audio spectrogram into an appearance feature vector and a spectrum feature volume, respectively. These are subsequently fused by calculating a weighted sum of spectrum features using appearance features as weights. The result is further converted to a binary mask and multiplied with the input spectrogram to produce the separated output. The Audio-Motion stage again encodes the spectrograms and the video sequence into feature representations. These are fused with the proposed Audio-Motion Transformer module, decoded, and passed to produce a refined mask, which is multiplied with the input mixture spectrogram to produce the final output.
                        </p>
@@ -117,7 +105,7 @@
                 </h3>
                 <div class="text-center">
                     <div style="position:relative;padding-top:80%;">
-                        <img src='figures/AME.png' style="position:absolute;top:0;left:0;width:80%;padding-left:20%">
+                        <img src='figures/AME.png' style="position:absolute;top:0;left:0;width:100%"><br>
                         <p class="text-justify">
                             The proposed Audio-Motion Embedding (AME) framework exploits the natural correlation between the audio and motion of a natural video. The AME framework (see Figure~\ref{fig:AVTA}) consists of Motion Network and Sound Network, which map the motion and audio sequences into a common embedding space, respectively. We formulate the learning objectives to enforce small embedding distances between well synchronised streams and large distances for out-of-sync streams. We hypothesize that this learning objective encourages the Motion Network to focus mainly on the sound related motion features in the input video.
 
@@ -137,7 +125,7 @@
             </h3>
                 <div class="text-center">
                     <div style="position:relative;padding-top:30%;">
-                        <img src='figures/eq_1.png' style="position:absolute;top:0;left:0;width:100%;padding-left:0%">
+                        <img src='figures/eq_1.png' style="position:absolute;top:0;left:0;width:100%"><br>
                     </div>
                 </div>
             </div>
@@ -150,7 +138,7 @@
                 </h3>
                 <div class="text-center">
                     <div style="position:relative;padding-top:30%;">
-                        <img src='figures/eq_2.png' style="position:absolute;top:0;left:0;width:100%">
+                        <img src='figures/eq_2.png' style="position:absolute;top:0;left:0;width:100%"><br>
                     </div>
                 </div>
             </div>
@@ -163,7 +151,7 @@
                 </h3>
                 <div class="text-center">
                     <div style="position:relative;padding-top:85%;">
-                        <img src='figures/AMT.png' style="position:absolute;top:0;left:0;width:100%">
+                        <img src='figures/AMT.png' style="position:absolute;top:0;left:0;width:100%"><br>
                         <p class="text-justify">
                             The Audio-Motion Transformer (AMT) module is used to leverage the obtained motion cues (the motions of sound learned with AME) for sound source separation.
                         </p>
@@ -179,7 +167,7 @@
                 </h3>
                 <div class="text-center">
                     <div style="position:relative;padding-top:85%;">
-                        <img src='figures/sep_diff_MUSIC21.png' style="position:absolute;top:0;left:0;width:85%;padding-left:15%">
+                        <img src='figures/sep_diff_MUSIC21.png' style="position:absolute;top:0;left:0;width:100%"><br>
                     </div>
                 </div>
             </div>
@@ -192,7 +180,7 @@
                 </h3>
                 <div class="text-center">
                     <div style="position:relative;padding-top:85%;">
-                        <img src='figures/sep_diff.png' style="position:absolute;top:0;left:0;width:85%;padding-left:15%">
+                        <img src='figures/sep_diff.png' style="position:absolute;top:0;left:0;width:100%"><br>
                     </div>
                 </div>
             </div>
@@ -205,7 +193,7 @@
                 </h3>
                 <div class="text-center">
                     <div style="position:relative;padding-top:85%;">
-                        <img src='figures/sep_same.png' style="position:absolute;top:0;left:0;width:85%;padding-left:15%">
+                        <img src='figures/sep_same.png' style="position:absolute;top:0;left:0;width:100%"><br>
                     </div>
                 </div>
             </div>
@@ -219,7 +207,7 @@
                 </h3>
                 <div class="text-center">
                     <div style="position:relative;padding-top:85%;">
-                        <img src='figures/loc.png' style="position:absolute;top:0;left:0;width:85%;padding-left:15%">
+                        <img src='figures/loc.png' style="position:absolute;top:0;left:0;width:100%"><br>
                     </div>
                 </div>
             </div>

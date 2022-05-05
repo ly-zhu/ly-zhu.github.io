@@ -5,43 +5,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>COF-Net</title>
+    <title><leveraging-category-information-for-single-frame-visual-sound-source-separation/title>
+
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta property="og:image" content="https://ly-zhu.github.io/leveraging-category-information-for-single-frame-visual-sound-source-separation/figures/overview.png">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="1168">
-    <meta property="og:image:height" content="520">
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://ly-zhu.github.io/leveraging-category-information-for-single-frame-visual-sound-source-separation/"/>
-    <meta property="og:title" content="Leveraging Category Information for Single-Frame Visual Sound Source Separation" />
-    <meta property="og:description" content="" />
+    <link rel="icon" type="image/png" href="https://ly-zhu.github.io/images/zhu_icon.jpeg">
 
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💫</text></svg>">
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
-    <link rel="stylesheet" href="assets/css/app.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://ly-zhu.github.io/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://ly-zhu.github.io/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://ly-zhu.github.io/assets/css/codemirror.min.css">
+    <link rel="stylesheet" href="https://ly-zhu.github.io/assets/css/app.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
-    
-    <script src="assets/js/app.js"></script>
+    <script src="https://ly-zhu.github.io/assets/js/app.js"></script>
 </head>
 
 <body>
     <div class="container" id="main">
         <div class="row">
-            <h2 class="col-md-12 text-center">
-                <br> Visually Guided Sound Source Separation using Cascaded Opponent Filter Network</br>
+            <h1 class="col-md-12 text-center">
+                <b> Leveraging Category Information for Single-Frame Visual Sound Source Separation</b>
                 <small>
                 </small>
-            </h2>
+            </h1>
         </div>
 
         <div class="row">
@@ -65,15 +55,15 @@
                     <ul class="nav nav-pills nav-justified">
                         <li>
                             <a href="https://ieeexplore.ieee.org/abstract/document/9484036">
-                            <image src="figures/paper_img.png" height="40px">
-                                <h5><strong>Paper</strong></h5>
+                            <image src="figures/paper_img.png" height="120px"><br>
+                                <h4><strong>Paper</strong></h4>
                             </a>
                         </li>
 
                         <li>
                             <a href="https://github.com/ly-zhu/Leveraging-Category-Information-for-Single-Frame-Visual-Sound-Source-Separation">
-                            <image src="https://ly-zhu.github.io/images/github_icon.png" height="40px">
-                                <h5><strong>Code</strong></h5>
+                            <image src="https://ly-zhu.github.io/images/github_icon.png" height="120px"><br>
+                                <h4><strong>Code</strong></h4>
                             </a>
                         </li>
 
@@ -99,7 +89,7 @@
                 </h3>
                 <div class="text-center">
                     <div style="position:relative;padding-top:60%;">
-                        <img src='figures/overview.png' style="position:absolute;top:0;left:0;width:80%;padding-left:20%">
+                        <img src='figures/overview.png' style="position:absolute;top:0;left:0;width:100%"><br>
                         <p class="text-justify">
                             The framework of single frame visual sound source separation and localization system. The appearance network A converts the input image I (a random frame of a sequence video) to visual feature maps A(I) and further, with a spacial pooling, to a compact representation e. The sound network S splits the mixture spectrogram X into a set of feature maps S(X). A linear combination of appearance representation e and sound features maps S(X) produces a sound separation mask b. The appearance attention module (red and blue arrows) is formed by a scalar product between the appearance representation e and appearance feature maps A(I). The appearance attention module produces a source location mask p.
                        </p>
@@ -115,7 +105,7 @@
                 </h3>
                 <div class="text-center">
                     <div style="position:relative;padding-top:80%;">
-                        <img src='figures/locSep_vis_MUSIC.png' style="position:absolute;top:0;left:0;width:80%;padding-left:20%">
+                        <img src='figures/locSep_vis_MUSIC.png' style="position:absolute;top:0;left:0;width:100%"><br>
                     </div>
                 </div>
             </div>
@@ -128,7 +118,7 @@
                 </h3>
                 <div class="text-center">
                     <div style="position:relative;padding-top:30%;">
-                        <img src='figures/loc_vis_MUSIC_res50_dv3p.png' style="position:absolute;top:0;left:0;width:100%;padding-left:0%">
+                        <img src='figures/loc_vis_MUSIC_res50_dv3p.png' style="position:absolute;top:0;left:0;width:100%"><br>
                     </div>
                 </div>
             </div>
@@ -141,7 +131,7 @@
                 </h3>
                 <div class="text-center">
                     <div style="position:relative;padding-top:30%;">
-                        <img src='figures/.table1png' style="position:absolute;top:0;left:0;width:100%">
+                        <img src='figures/.table1png' style="position:absolute;top:0;left:0;width:100%"><br>
                     </div>
                 </div>
             </div>
@@ -217,7 +207,7 @@
                 </h3>
                 <div class="text-center">
                     <div style="position:relative;padding-top:60%;">
-                        <img src='figures/tsne_res50_MUSIC.png' style="position:absolute;top:0;left:0;width:80%;padding-left:20%">
+                        <img src='figures/tsne_res50_MUSIC.png' style="position:absolute;top:0;left:0;width:100%;padding-left:0%"><br>
                         <p class="text-justify">
                             We take the framework of A(Res-50) + S(MV2) as an example to visualize the appearance embedding on different conditions (e.g. appearance network, appearance attention, appearance classifier, and CatEmb) with t-SNE in Fig. 3. As we can see, the compactness of both the intra- and inter-class of A(Res-50) embedding is limited. From the A(Res-50) to A(Res-50, att), and A(Res-50, classifier), the learned appearance embedding is pushed more close to the CatEmb in Fig. 3(d).
                        </p>
