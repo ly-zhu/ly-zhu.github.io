@@ -96,11 +96,13 @@
                     Architecture
                 </h3>
                 <div class="text-center">
-                    <div style="position:relative;padding-top:35%;">
+                    <div style="position:relative;padding-top:0%;">
                         <!--
                         <image src="figures/overview.png" style="position:absolute;top:0;left:0;width:100%"><br>
                         -->
+                        <p align="center">
                         <image src="figures/overview.png", width="800"><br>
+                        </p>
                         <p class="text-justify">
                         The goal of the visual sound separation is to extract the component audio that corresponds to the sound source in the given visual frame. The proposed V-SlowFast network contains four components: vision network, audio-visual global attention module, slow spectrogram network, and fast spectrogram residual network. The vision network randomly extracts a single frame from the input video sequence and encodes it into a feature vector. To enhance the discrimination between semantic categories, we randomly sample an additional visual frame from a same (positive) or different (negative) category video to make contrastive pairs during the training procedure. We apply two visual contrastive objectives (embedding and localization) to the contrastive pairs along the vision network. The audio-visual global attention module fuses the visual embedding with sound features. The slow spectrogram network performs source separation at the coarse time scale (low sampling rate) using appearance features. The obtained result and the original mixture are further passed to the fast spectrogram residual network, which refines the source separation using spectrogram with higher temporal resolution (high sampling rate).
                         </p>
