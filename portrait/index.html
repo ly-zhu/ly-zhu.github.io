@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>portrait</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" type="image/png" href="https://ly-zhu.github.io/images/lingyuzhu_circle.png">
+
+    <link rel="stylesheet" href="https://ly-zhu.github.io/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://ly-zhu.github.io/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://ly-zhu.github.io/assets/css/codemirror.min.css">
+    <link rel="stylesheet" href="https://ly-zhu.github.io/assets/css/app.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    <script src="https://ly-zhu.github.io/assets/js/app.js"></script>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center">
+                <b> Portrait Instance Segmentation for Mobile Devices</b>
+                <small>
+                </small>
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://ly-zhu.github.io/">
+                          Lingyu Zhu
+                        </a>
+                        </br>Tampere University of Technology
+                    </li>
+                    <li>
+                        <a href="https://sites.google.com/site/tinghuaiw/">
+                          Tinghuai Wang
+                        </a>
+                        </br>Nokia Technologies Oy
+                    </li>
+                    <li>
+                        <a href="https://scholar.google.com/citations?hl=en&user=ZI1_7M4AAAAJ&view_op=list_works&sortby=pubdate">
+                          Emre Aksu
+                        </a>
+                        </br>Nokia Technologies Oy
+                    </li>
+                    <li>
+                        <a href="http://vision.cs.tut.fi/personal/JoniKamarainen/">
+                          Joni Kämäräinen
+                        </a>
+                        </br>Tampere University of Technology
+                    </li>
+                </ul>    
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4 text-center">
+                <ul class="nav nav-pills nav-justified">
+                    <li>
+                        <a href="https://ieeexplore.ieee.org/abstract/document/8785021">
+                        <image src="figures/paper_img.png" height="120px"><br>
+                            <h4><strong>Paper</strong></h4>
+                        </a>
+                    </li>
+                    <li>
+                        <!--
+                        <a href="https://github.com/ly-zhu/cof-net">
+                        -->
+                        <image src="https://ly-zhu.github.io/images/github_icon.png" height="120px"><br>
+                            <h4><strong>Code</strong></h4>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Examples of Portrait Instance Segmentation
+                </h3>
+                <image src="figures/instance.png" class="img-responsive" alt="overview" width="100%" style="margin:auto;"><br>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Abstract
+                </h3>
+                <p class="text-justify">
+                    Accurate and efficient portrait instance segmentation has become a crucial enabler for many multimedia applications on mobile devices. We present a novel convolutional neural network (CNN) architecture to explicitly address the long standing problems in portrait segmentation, i.e., semantic coherence and boundary localization. Specifically, we propose a cross-granularity categorical attention mechanism leveraging the deep supervisions to close the semantic gap of CNN feature hierarchy by imposing consistent category-oriented information across layers. Furthermore, a cross-granularity boundary enhancement module is proposed to boost the boundary awareness of deep layers by integrating the shape context cues from shallow layers of the network. We further propose a novel and efficient non-parametric affinity model to achieve efficient instance segmentation on mobile devices. We present a portrait image dataset with instance level annotations dedicated to evaluating portrait instance segmentation algorithms. We evaluate our approach on challenging datasets which obtains state-of-the-art results.
+                </p>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Architecture
+                </h3>
+                <image src="figures/arch.png" class="img-responsive" alt="overview" width="100%" style="margin:auto;"><br>
+                <p class="text-justify">
+                    The multi-person photo is firstly processed by a portrait segmentation network, a person detector and a superpixel generator, producing person/non-person labels, person bounding boxes and superpixels respectively. The instance segmentation is sequentially produced by the proposed non-parametric affinity model.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Example of Overlapping Bounding Boxes
+                </h3>
+                <image src="figures/bbx.png" class="img-responsive" alt="overview" width="100%" style="margin:auto;"><br>
+                <p class="text-justify">
+                    The left figure illustrates the portrait segmentation map and detected person instances associated to bounding boxes. The middle figure shows the generated seeds for each person instance (i.e., known identity) and the right figure shows the overlapping regions which comprise pixels with unknown identities.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Examples of Portrait Segmentation
+                </h3>
+                <image src="figures/semantic.png" class="img-responsive" alt="overview" width="100%" style="margin:auto;"><br>
+                </p>
+            </div>
+        </div>
+
+
+        <div class="row" style="position:relative;padding-top:00%;">
+            <div class="col-md-8 col-md-offset-2" >
+                <h3>
+                    Citation
+                </h3>
+                <div class="form-group col-md-15 col-md-offset-0">
+                    <textarea id="bibtex" class="form-control" readonly>
+```bibtex 
+@inproceedings{zhu2019portrait,
+  title={Portrait instance segmentation for mobile devices},
+  author={Zhu, Lingyu and Wang, Tinghuai and Aksu, Emre and Kamarainen, Joni-Kristian},
+  booktitle={2019 IEEE International Conference on Multimedia and Expo (ICME)},
+  pages={1630--1635},
+  year={2019},
+  organization={IEEE}
+}
+```
+                </textarea>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

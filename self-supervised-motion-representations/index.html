@@ -75,6 +75,17 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
+                    Overviw video
+                </h3>
+                <video id="v0" width="100%" autoplay loop muted controls>
+                  <source src="figures/supp.mp4" type="video/mp4" />
+                </video>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
                     Abstract
                 </h3>
                 <p class="text-justify">
@@ -100,7 +111,7 @@
                 <h3>
                     Audio-Motion Embedding Framework
                 </h3>
-                <image src="figures/AME.png" class="img-responsive" alt="overview" width="100%" style="max-height: 450px;margin:auto;"><br>
+                <image src="figures/AME.png" class="img-responsive" alt="overview" width="90%" style="margin:auto;"><br>
                 <p class="text-justify">
                     The proposed Audio-Motion Embedding (AME) framework exploits the natural correlation between the audio and motion of a natural video. The AME framework (see Figure~\ref{fig:AVTA}) consists of Motion Network and Sound Network, which map the motion and audio sequences into a common embedding space, respectively. We formulate the learning objectives to enforce small embedding distances between well synchronised streams and large distances for out-of-sync streams. We hypothesize that this learning objective encourages the Motion Network to focus mainly on the sound related motion features in the input video.
                 </p>
@@ -176,7 +187,7 @@
                 <h3>
                     Examples of Sound Source Localization
                 </h3>
-                <image src="figures/loc.png" class="img-responsive" alt="overview" width="100%" style="max-height: 450px;margin:auto;"><br>
+                <image src="figures/loc.png" class="img-responsive" alt="overview" width="100%" style="margin:auto;"><br>
             </div>
         </div>
 
@@ -187,14 +198,14 @@
                 </h3>
                 <div class="form-group col-md-15 col-md-offset-0">
                     <textarea id="bibtex" class="form-control" readonly>
-@misc{zhu2021visually,
-      title={Visually Guided Sound Source Separation and Localization using Self-Supervised Motion Representations}, 
-      author={Lingyu Zhu and Esa Rahtu},
-      year={2021},
-      eprint={2104.08506},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
-}
+			@misc{zhu2021visually,
+			      title={Visually Guided Sound Source Separation and Localization using Self-Supervised Motion Representations}, 
+			      author={Lingyu Zhu and Esa Rahtu},
+			      year={2021},
+			      eprint={2104.08506},
+			      archivePrefix={arXiv},
+			      primaryClass={cs.CV}
+			}
                 </textarea>
                 </div>
             </div>

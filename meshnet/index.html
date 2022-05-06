@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>meshnet</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" type="image/png" href="https://ly-zhu.github.io/images/lingyuzhu_circle.png">
+
+    <link rel="stylesheet" href="https://ly-zhu.github.io/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://ly-zhu.github.io/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://ly-zhu.github.io/assets/css/codemirror.min.css">
+    <link rel="stylesheet" href="https://ly-zhu.github.io/assets/css/app.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    <script src="https://ly-zhu.github.io/assets/js/app.js"></script>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center">
+                <b> Cross-Granularity Attention Network for Semantic Segmentation</b>
+                <small>
+                </small>
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://ly-zhu.github.io/">
+                          Lingyu Zhu
+                        </a>
+                        </br>Tampere University of Technology
+                    </li>
+                    <li>
+                        <a href="https://sites.google.com/site/tinghuaiw/">
+                          Tinghuai Wang
+                        </a>
+                        </br>Nokia Technologies Oy
+                    </li>
+                    <li>
+                        <a href="https://scholar.google.com/citations?hl=en&user=ZI1_7M4AAAAJ&view_op=list_works&sortby=pubdate">
+                          Emre Aksu
+                        </a>
+                        </br>Nokia Technologies Oy
+                    </li>
+                    <li>
+                        <a href="http://vision.cs.tut.fi/personal/JoniKamarainen/">
+                          Joni Kämäräinen
+                        </a>
+                        </br>Tampere University of Technology
+                    </li>
+                </ul>    
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4 text-center">
+                <ul class="nav nav-pills nav-justified">
+                    <li>
+                        <a href="https://openaccess.thecvf.com/content_ICCVW_2019/papers/NeurArch/Zhu_Cross-Granularity_Attention_Network_for_Semantic_Segmentation_ICCVW_2019_paper.pdf">
+                        <image src="figures/paper_img.png" height="120px"><br>
+                            <h4><strong>Paper</strong></h4>
+                        </a>
+                    </li>
+                    <li>
+                        <!--
+                        <a href="https://github.com/ly-zhu/cof-net">
+                        -->
+                        <image src="https://ly-zhu.github.io/images/github_icon.png" height="120px"><br>
+                            <h4><strong>Code</strong></h4>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Example Results on PASCAL VOC 2012 Dataset
+                </h3>
+                <image src="figures/voc.png" class="img-responsive" alt="overview" width="100%" style="margin:auto;"><br>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Abstract
+                </h3>
+                <p class="text-justify">
+                    Despite the remarkable progress of semantic segmentation in recent years, much remains to be addressed in order to achieve better semantic coherence and boundary delineation. In this paper, we propose a novel convolutional neural network (CNN) architecture for semantic segmentation which explicitly addresses these two issues. Specifically, we propose a categorical attention mechanism to propagate consistent category-oriented information across multi-granularity contextual interpretations to close the semantic gap residing in CNN feature hierarchy. This novel design alleviates the semantic information loss during the feature combination and transformation process in decoder network. We further integrate a contour branch in our architecture to enhance the boundary awareness of the semantic feature derived in the form of a novel element-wise contour attention at each level of feature hierarchy. Additionally, we introduce a cross-granularity contour enhancement mechanism to propagate rich boundary cues from early layers to deep layers. We perform extensive quantitative evaluations in close proximity to object boundaries which confirms its superior effectiveness in boundary delineation. These novel mechanisms which boost the essentials in segmentation, i.e., region-wise semantic coherence and accurate object contour localization, allow our architecture “MeshNet” to obtain state-of-the-art performance on two challenging datasets, i.e., PASCAL VOC 2012 and Cityscapes.
+                </p>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Architecture of MeshNet
+                </h3>
+                <image src="figures/arch.png" class="img-responsive" alt="overview" width="100%" style="margin:auto;"><br>
+                <p class="text-justify">
+                    (a) An overview of our proposed architecture MeshNet. Four mesh units MU-i take as input of the feature maps from encoder, which propagate consistent categorical information (red arrows) in a top-down manner across feature hierarchy and explicitly enhance boundary awareness of semantic features by incorporating contour features (blue arrows) from early hierarchy. (b) Architecture of MU-i. In each MU-i, the feature maps from Layer-i are fed into two branches, i.e., semantic branch (SB) and contour branch (CB). The features from two branches are fused by an element-wise Contour Attention (CA) module to explicitly enhance the semantic boundary awareness at each feature hierarchy. The dashed blocks in each MU-i are associated with the auxiliary loss functions defined in Section 3.5 during training. (c) Architecture of proposed CGCA module. CGCA: Cross-Granularity Categorical Attention, and CGCE: Cross-Granularity Contour Enhancement.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Intermediate Semantic Predictions before and after CGCA
+                </h3>
+                <image src="figures/semantic.png" class="img-responsive" alt="overview" width="100%" style="margin:auto;"><br>
+                <p class="text-justify">
+                    Intermediate semantic predictions before (top row) and after (bottom row) CGCA. The corresponding attention weight vector below each label map demonstrates the efficacy of the proposed architecture where the semantic ambiguity issue residing in the lower-level features is effectively resolved and the categorical feature becomes more attentive on consistent categories, i.e. background (0) and people (15) in this example.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Intermediate Contour Predictions before and after CGCE
+                </h3>
+                <image src="figures/contour.png" class="img-responsive" alt="overview" width="100%" style="margin:auto;"><br>
+                <p class="text-justify">
+                    Intermediate contour predictions before (top row) and after (bottom row) CGCE. CGCE enhances the boundary awareness of the deeper layer features, especially the boundary attention of MU-4.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Performance Evaluation along Object Boundaries with Trimap Bands
+                </h3>
+                <image src="figures/trimap.png" class="img-responsive" alt="overview" width="85%" style="margin:auto;"><br>
+                <p class="text-justify">   
+                    (a) Ground truth. (b) “Void” 20-pixel trimap. (c) “Sobel” 20-pixel trimap. (d) mIoU accuracy of architecture components from ablation studies with varying width of trimap band. The encoder “Xception65” is omitted here, and “void” boundary is marked as “◦”, “sobel” boundary is marked as “⋆”. (e) mIoU accuracy (with MS-COCO pre-training) of our MeshNet and DeepLabv3+ with varying width of trimap band.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Example Results on Cityscapes Dataset
+                </h3>
+                <image src="figures/cityscapes.png" class="img-responsive" alt="overview" width="100%" style="margin:auto;"><br>
+            </div>
+        </div>  
+
+
+        <div class="row" style="position:relative;padding-top:00%;">
+            <div class="col-md-8 col-md-offset-2" >
+                <h3>
+                    Citation
+                </h3>
+                <div class="form-group col-md-15 col-md-offset-0">
+                    <textarea id="bibtex" class="form-control" readonly>
+                        @InProceedings{Zhu_2019_ICCV,
+			  author = {Zhu, Lingyu and Wang, Tinghuai and Aksu, Emre and Kamarainen, Joni-Kristian},
+			  title = {Cross-Granularity Attention Network for Semantic Segmentation},
+			  booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV) Workshops},
+			  month = {Oct},
+			  year = {2019}
+			}
+                </textarea>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
