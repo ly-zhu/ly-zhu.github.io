@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Beyond Visual Field of View</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" type="image/png" href="https://ly-zhu.github.io/images/lingyuzhu_circle.png">
+
+    <link rel="stylesheet" href="https://ly-zhu.github.io/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://ly-zhu.github.io/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://ly-zhu.github.io/assets/css/codemirror.min.css">
+    <link rel="stylesheet" href="https://ly-zhu.github.io/assets/css/app.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    <script src="https://ly-zhu.github.io/assets/js/app.js"></script>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center">
+                <b> Beyond Visual Field of View: Perceiving 3D Environment with Echoes and Vision</b>
+                <small>
+                </small>
+            </h2>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://ly-zhu.github.io/"> Lingyu Zhu </a>
+                        </br> Tampere University
+                    </li>
+                    
+                    <li>
+                        <a href="https://esa.rahtu.fi/"> Esa Rahtu </a>
+                        </br> Tampere University
+                    </li>
+
+		    <li>
+                        <a href="https://hangzhaomit.github.io/"> Hang Zhao </a>
+                        </br> Tsinghua University
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+                <div class="col-md-4 col-md-offset-4 text-center">
+                    <ul class="nav nav-pills nav-justified">
+                        <li>
+                            <a href="coming soon!">
+                            <image src="figures/paper_img.png" height="120px"><br>
+                                <h4><strong>Paper</strong></h4>
+                            </a>
+                        </li>
+
+                        <li>
+                        <!--
+                        <a href="https://github.com/ly-zhu/cof-net">
+                        -->
+                        <image src="https://ly-zhu.github.io/images/github_icon.png" height="120px"><br>
+                            <h4><strong>Code</strong></h4>
+                        </a>
+                    </li>
+                    </ul>
+                </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Abstract
+                </h3>
+                <image src="figures/fig1.png" class="img-responsive" alt="overview" width="80%" style="max-height: 450px;margin:auto;"><br>
+                <p class="text-justify">
+                    This paper focuses on perceiving and navigating 3D environments using echoes and RGB image. In particular, we perform depth estimation by fusing RGB image with echoes, received from multiple orientations. Unlike previous works, we go beyond the field of view of the RGB and estimate dense depth maps for substantially larger parts of the environment. We show that the echoes provide holistic and in-expensive information about the 3D structures complementing the RGB image. Moreover, we study how echoes and the wide field-of-view depth maps can be utilised in robot navigation. We compare the proposed methods against recent baselines using two sets of challenging realistic 3D environments: Replica and Matterport3D. The implementation and pre-trained models will be made publicly available.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    The framework of depth estimation from echoes and RGB image
+                </h3>
+                <image src="figures/arch1.png" class="img-responsive" alt="overview" width="100%" style="max-height: 450px;margin:auto;"><br>
+                <p class="text-justify">
+                    We study how to estimate a large field of view depth map using a narrow field of view RGB and echoes, received from multiple orientations. Given only echoes as the input, we propose a model in the Figure above (without the vision encoder) to utilize signals received from different orientations to predict the depth. Each echo encoder maps a pair of binaural echo spectrograms into a vector, which reserves the spatial cues of the 3D environment. The computed spatial vectors from different echo orientations are concatenated first before passing to the depth decoder for depth prediction. The echo encoders share parameters. When an RGB with echoes is available, we implement the whole model in Figure to fuse echoes into RGB for predicting a wide FoV depth.
+                </p>
+
+                <p class="text-justify">
+                   RGB image is a strong cue for inferring the depth. However, the RGB is often available only for very limited FoV and thus provides only narrow picture of the scene when considering the human-like setup. Adding more cameras will introduce lots of additional processing. However, the ambisonic audio received from the omnidirectional signal is naturally a sensory signal that is equivalent to 360 degree image, which provides rich holistic geometry information of the 3D environment. Echo could be a very strong cue when we go outside the RGB FoV. These motivate us to leverage echoes to overcome the limitations of visual observation and obtain better perception of the environment.
+               </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Comparison with state-of-the-art
+                </h3>
+                <image src="figures/depth_comp.png" class="img-responsive" alt="overview" width="90%" style="margin:auto;"><br>
+                <p class="text-justify">
+                    We start by comparing our models against competitive baselines of Average, Echo2Depth, RGB2Depth, VisualEchoes [38],and Materials [69] to estimate depth inside RGB FoV (90◦) in Table 1. We adopt same experimental setup as [38, 69]. When using echoes alone, our method of combining echoes received from different orientations performs better than Echo2Depth [38]3 with a large margin. With the presence of target orientation RGB image, our proposed approach achieves improvement of 15.0% (Replica) and 22.1% (Matterport3D) over VisualEchoes [38]. Furthermore, we observe that the method Materials [69] performs the best on Replica dataset while only attaining similar results as VisualEchoes [38] on Matterport3D. This may explain that the material cues brought from the pretrained material approach [9] has dominant impact for depth prediction on Replica. However, for large Matterport3D environment scene, its influence declines. Remarkably, our model achieves the state-of-the-art results on Matterport3D dataset, overwhelming Materials [69] around 18.2% on RMSE. It is worth noting that the Materials [69] model has 316.9M parameters in comparison to our 21.7M. In addition, we show qualitative visualizations of depth estimation in Fig. 4. More qualitative examples are presented in supplementary materials. These indicate our proposed methods better perceive the geometrical information.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Estimating depth maps beyond the visual field of view
+                </h3>
+                <image src="figures/depth_curve.png" class="img-responsive" alt="overview" width="90%" style="margin:auto;"><br>
+                <p class="text-justify">
+                    We experiment our model in Fig. 2 (w/o and w/ echoes) for depth extension (FoV 120◦) using echoes and RGB of FoV ∈ {15◦, 30◦, 45◦, 60◦, 75◦, 90◦, 105◦, 120◦}. We observe from Fig. 5 that associating echoes outperforms the counterpart results (w/o echoes) over different FoV. Especially for Replica, the improvement gets smaller when increasing the RGB FoV. This indicates that the echoes serve as a strong spatial cue when goes to the region where RGB is not available. Thus, increasing the RGB FoV to apply to echoes does not bring large performance gain. Interestingly, when enlarging the RGB FoV for Matterport3D, the results of using echoes and RGB have relatively stable improvement than using RGB alone. This may because the Matterport3D contains large 3D environment scenes and the RGB image captures important geometric structure for large environment scenes.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Extending depth prediction to complete unseen areas
+                </h3>
+                <image src="figures/depth_bars.png" class="img-responsive" alt="overview" width="90%" style="margin:auto;"><br>
+                <p class="text-justify">
+                    It is a more challenging problem when there is no overlap between the input RGB and target depth. Fig. 6 visualizes depth prediction metrics of the sideways (“left” and “right”) and “back” when giving echoes and RGB image. The input RGB and predicted depth are of FoV 90◦. Using RGB image to infer depth of an unseen orientation may benefit from the similarity and extension of the visual surfaces. he visual similarity between the forward and backward is comparatively lower, thus it revels by the worse performance of the blue bar from “Back” depth prediction compared to the “Left” and “Right”. The model of using echoes alone (dashed black line) performs better than using RGB image (blue bars). We also experiment depth estimation of a target orientation by using the RGB images from three rest orientations. For instance, we use the RGB images from “Left”, “Right”, and “Back” sides to predict the front depth. Its result is shown as dashed green line in Fig. 6, which indicates investing additional cameras can bring performance gain but increase substantial computing complexity.
+                </p>
+
+                <p class="text-justify">
+                    However, fusing echoes into one RGB image (red bars) attains superior improvements. For all the metrics, the red bar surpasses the blue bar, blank dashed line, and the green dashed line by a large margin. These reflect the efficacy of fusing echoes into RGB image for exploiting the geometrical information. Specifically, we observe that, after fusing echoes into RGB, the performance differences predicting for among “Left”, “Right”, and “Back” get smaller for all the metrics. This is interesting because it suggests that the echoes capture complementary spatial information for each orientation, which also shows echoes contain strong geometrical cues when we go outside of the RGB FoV.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Navigating Using Echoes and RGB
+                </h3>
+                <image src="figures/nav.png" class="img-responsive" alt="overview" width="90%" style="margin:auto;"><br>
+                <p class="text-justify">
+                    We introduce PointGoal echo navigation (Fig. 3) to directly use echoes to perceive the spatial cues of physical space for 3D navigation. The echo navigation network is composed of an echo encoder and action predictor. The echo encoder maps the binaural echoes into a vector. The action predictor processes the echo feature vector and GPS signal to predict agent actions. Moreover, we take advantage of audio-visual learning by fusing echoes to visual observations for better embodied 3D navigation.
+                </p>
+            </div>
+        </div>
+        
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Navigation Trajectories Visualization
+                </h3>
+                <image src="figures/nav_vis.png" class="img-responsive" alt="overview" width="90%" style="margin:auto;"><br>
+                <p class="text-justify">
+                    Fig. 7 shows examples of navigation trajectories on top-down maps using echoes in comparison with using raw RGB and original depth image. PointGoal RGB agent moves back and forth (light blue path) and bumps into obstacles multiple times. In contrast, the echoes, especially for the highlighted regions (dash red circles), better sense the obstacles and efficiently avoid backtracking.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
