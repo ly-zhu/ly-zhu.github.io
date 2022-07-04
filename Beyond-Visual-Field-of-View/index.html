@@ -83,7 +83,7 @@
                 <h3>
                     Abstract
                 </h3>
-                <image src="figures/fig1.png" class="img-responsive" alt="overview" width="80%" style="max-height: 450px;margin:auto;"><br>
+                <image src="figures/fig1.png" class="img-responsive" alt="overview" width="90%" style="max-height: 450px;margin:auto;"><br>
                 <p class="text-justify">
                     This paper focuses on perceiving and navigating 3D environments using echoes and RGB image. In particular, we perform depth estimation by fusing RGB image with echoes, received from multiple orientations. Unlike previous works, we go beyond the field of view of the RGB and estimate dense depth maps for substantially larger parts of the environment. We show that the echoes provide holistic and in-expensive information about the 3D structures complementing the RGB image. Moreover, we study how echoes and the wide field-of-view depth maps can be utilised in robot navigation. We compare the proposed methods against recent baselines using two sets of challenging realistic 3D environments: Replica and Matterport3D. The implementation and pre-trained models will be made publicly available.
                 </p>
@@ -95,7 +95,7 @@
                 <h3>
                     The framework of depth estimation from echoes and RGB image
                 </h3>
-                <image src="figures/arch1.png" class="img-responsive" alt="overview" width="100%" style="max-height: 450px;margin:auto;"><br>
+                <image src="figures/arch1.png" class="img-responsive" alt="overview" width="90%" style="max-height: 450px;margin:auto;"><br>
                 <p class="text-justify">
                     We study how to estimate a large field of view depth map using a narrow field of view RGB and echoes, received from multiple orientations. Given only echoes as the input, we propose a model in the Figure above (without the vision encoder) to utilize signals received from different orientations to predict the depth. Each echo encoder maps a pair of binaural echo spectrograms into a vector, which reserves the spatial cues of the 3D environment. The computed spatial vectors from different echo orientations are concatenated first before passing to the depth decoder for depth prediction. The echo encoders share parameters. When an RGB with echoes is available, we implement the whole model in Figure to fuse echoes into RGB for predicting a wide FoV depth.
                 </p>
